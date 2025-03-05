@@ -1429,7 +1429,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Roblox-Anticheat-finder-30874"))()
-   end
+   end,
 })
 
 local Button = Tab:CreateButton({
