@@ -1182,7 +1182,7 @@ local Tab = Window:CreateTab("Hub's", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("FE",false) -- The 2nd argument is to tell if its only a Title and doesnt contain element
 
 local Button = Tab:CreateButton({
-   Name = "FE Satan",
+   Name = "FE Satan (only https://www.roblox.com/games/17574618959/Just-a-baseplate)",
    Interact = 'Click',
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -1417,6 +1417,8 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Roblox-Anticheat-finder-30874"))()
+   end
+})
 
 local Button = Tab:CreateButton({
    Name = "Aim-ware (aimbots)",
@@ -1424,7 +1426,5 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/someoneus/master/refs/heads/main/aimwaresource.lua"))()
-   end,
-})
    end,
 })
