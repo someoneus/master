@@ -3,7 +3,6 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Camera = game.Workspace.CurrentCamera
 
-
 -- Function to generate a random key without spaces
 local function GenerateRandomString()
     local letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -1182,7 +1181,7 @@ local Button = Tab:CreateButton({
 local Tab = Window:CreateTab("Hub's", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("FE R6 Animation",false) -- The 2nd argument is to tell if its only a Title and doesnt contain element
 local Button = Tab:CreateButton({
-   Name = "HatHub",
+   Name = "HatHub (Patched)",
    Interact = 'Click',
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -1231,25 +1230,169 @@ local Button = Tab:CreateButton({
 
 local Section = Tab:CreateSection("No Key",false)
 local Button = Tab:CreateButton({
-   Name = "Button Example",
+   Name = "Zombie Attack - Voidz",
    Interact = 'Click',
    Callback = function()
    -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
    end,
 })
 
 local Button = Tab:CreateButton({
-   Name = "Button Example",
+   Name = "Dead Rails - Lunor",
    Interact = 'Click',
    Callback = function()
    -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/Just3itx/Lunor-Loadstrings/refs/heads/main/Loader'))()
    end,
 })
 
 local Button = Tab:CreateButton({
-   Name = "Button Example",
+   Name = "Fisch - SpeedHubX",
    Interact = 'Click',
    Callback = function()
    -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Blox Fruit - SpeedHubX",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Doors - SpeedHubX",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Doors.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Muscle Legends - SpeedHubX",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
+
+local Tab = Window:CreateTab("Powerfull Scripts", 4483362458) -- Title, Image
+local Button = Tab:CreateButton({
+   Name = "LALOL Backdoor",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script'))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Micro Backdoor",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://paste.ee/r/GipgWZb8"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "SolSpy (for executor than doesn't support RemoteSpy)",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/Uylost/960b592d7fc7161c3e6de0047547d874/raw/cc0e9ca436afe2c3e253fdb357d1a61efd576098/gistfile1.txt"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "More UNC (for low power executor)",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-13110"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Black hole",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://pastebin.com/raw/tstrtDFD"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Kawaii Black hole",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321 /KAWAII-BLACK-HOLE/main/kawaii-black-hole.lua", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "RoChips",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+    if "you wanna use rochips universal" then
+	    local z_x,z_z="gzrux646yj/raw/main.ts","https://glot.io/snippets/"
+	    local im,lonely,z_c=task.wait,game,loadstring
+	    z_c(lonely:HttpGet(z_z..""..z_x))()
+	    return ("This will load in about 2 - 30 seconds" or "according to your device and executor")
+    end
+
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Server Finder",
+   Interact = 'Click',
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/RealBatu20/AI-Scripts-2025/refs/heads/main/LowServerFinderGUI.lua", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Super Ring",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/chesslovers69/Super-ring-parts-v6/refs/heads/main/Bylukaslol"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Internal executor - RoExec",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/Axchs/af0848c3885194d54f2c181562675126/raw/96862bc46256bcadde0df0cd799cc7a998bcad82/gistfile1.txt"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Internal executor - UI (pc only)",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/InfernusScripts/Other-Stuff/main/ExecutorInternal.lua"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Anti cheat finder",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Roblox-Anticheat-finder-30874"))()
    end,
 })
