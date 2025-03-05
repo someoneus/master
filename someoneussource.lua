@@ -1267,7 +1267,8 @@ local Button = Tab:CreateButton({
 	    local im,lonely,z_c=task.wait,game,loadstring
 	    z_c(lonely:HttpGet(z_z..""..z_x))()
 	    return ("This will load in about 2 - 30 seconds" or "according to your device and executor")
-    end,
+    end
+end,
 })
 local Tab = Window:CreateTab("Scripts", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Recommended",false) -- The 2nd argument is to tell if its only a Title and doesnt contain element
@@ -1385,8 +1386,6 @@ local Button = Tab:CreateButton({
 })
 
 
-   end,
-})
 
 local Button = Tab:CreateButton({
    Name = "Server Finder",
