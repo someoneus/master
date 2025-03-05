@@ -1,3 +1,4 @@
+-- v1 is completed
 local coregui = game:GetService("CoreGui")
 local duplicated = coregui:FindFirstChild("aimware")
 if duplicated then
@@ -29,79 +30,79 @@ PredictionStrength = 1.5
 --settings
 
 
-local text = Instance.new("TextBox")
-text.Parent = screenGui
-text.Size = UDim2.new(0.075, 0, 0.1, 0)
-text.Position = UDim2.new(0.3, 0, 0.175, 0)
-text.TextColor3 = Color3.fromRGB(255, 255, 255)
-text.MultiLine = false
-text.Text = "Range"
-text.PlaceholderText = "The range of aim. Current "..MaxDistance
-text.TextScaled = true
-text.ClearTextOnFocus = true
-text.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-text.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+local text4 = Instance.new("TextBox")
+text4.Parent = screenGui
+text4.Size = UDim2.new(0.075, 0, 0.1, 0)
+text4.Position = UDim2.new(0.3, 0, 0.175, 0)
+text4.TextColor3 = Color3.fromRGB(255, 255, 255)
+text4.MultiLine = false
+text4.Text = "Range"
+text4.PlaceholderText = "The range of aim. Preset "..MaxDistance
+text4.TextScaled = true
+text4.ClearTextOnFocus = true
+text4.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+text4.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
 local uicor = Instance.new("UICorner")
-uicor.Parent = text
+uicor.Parent = text4
 uicor.CornerRadius = UDim.new(0.25, 0)
 
-text.FocusLost:Connect(function()
-local v = tonumber(text.Text)
+text4.FocusLost:Connect(function()
+local v = tonumber(text4.Text)
 if v then
 MaxDistance = v
 end
-text.Text ="changed to "..MaxDistance
+text4.Text ="changed to "..MaxDistance
 end)
 
-local text = Instance.new("TextBox")
-text.Parent = screenGui
-text.Size = UDim2.new(0.075, 0, 0.1, 0)
-text.Position = UDim2.new(0.4, 0, 0.175, 0)
-text.TextColor3 = Color3.fromRGB(255, 255, 255)
-text.MultiLine = false
-text.Text = "Smoothness"
-text.PlaceholderText = "The smoothness of aim. Current "..Smoothness
-text.TextScaled = true
-text.ClearTextOnFocus = true
-text.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-text.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+local text2 = Instance.new("TextBox")
+text2.Parent = screenGui
+text2.Size = UDim2.new(0.075, 0, 0.1, 0)
+text2.Position = UDim2.new(0.4, 0, 0.175, 0)
+text2.TextColor3 = Color3.fromRGB(255, 255, 255)
+text2.MultiLine = false
+text2.Text = "Smoothness"
+text2.PlaceholderText = "The smoothness of aim. Preset "..Smoothness
+text2.TextScaled = true
+text2.ClearTextOnFocus = true
+text2.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+text2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
 local uicor = Instance.new("UICorner")
-uicor.Parent = text
+uicor.Parent = text2
 uicor.CornerRadius = UDim.new(0.25, 0)
 
-text.FocusLost:Connect(function()
-local v = tonumber(text.Text)
+text2.FocusLost:Connect(function()
+local v = tonumber(text2.Text)
 if v then
 Smoothness = v
 end
-text.Text = "changed to "..Smoothness
+text2.Text = "changed to "..Smoothness
 end)
 
-local text = Instance.new("TextBox")
-text.Parent = screenGui
-text.Size = UDim2.new(0.075, 0, 0.1, 0)
-text.Position = UDim2.new(0.5, 0, 0.175, 0)
-text.TextColor3 = Color3.fromRGB(255, 255, 255)
-text.MultiLine = false
-text.Text = "Prediction Strength"
-text.PlaceholderText = "Predict Strength. Current "..PredictionStrength
-text.TextScaled = true
-text.ClearTextOnFocus = true
-text.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
-text.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+local text1 = Instance.new("TextBox")
+text1.Parent = screenGui
+text1.Size = UDim2.new(0.075, 0, 0.1, 0)
+text1.Position = UDim2.new(0.5, 0, 0.175, 0)
+text1.TextColor3 = Color3.fromRGB(255, 255, 255)
+text1.MultiLine = false
+text1.Text = "Prediction Strength"
+text1.PlaceholderText = "Predict Strength. Preset "..PredictionStrength
+text1.TextScaled = true
+text1.ClearTextOnFocus = true
+text1.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+text1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 
 local uicor = Instance.new("UICorner")
-uicor.Parent = text
+uicor.Parent = text1
 uicor.CornerRadius = UDim.new(0.25, 0)
 
-text.FocusLost:Connect(function()
-local v = tonumber(text.Text)
+text1.FocusLost:Connect(function()
+local v = tonumber(text1.Text)
 if v then
     PredictionStrength = v
 end
-text.Text = "changed to "..PredictionStrength
+text1.Text = "changed to "..PredictionStrength
 
 end)
 
@@ -165,7 +166,7 @@ text.Position = UDim2.new(0.2, 0, 0.175, 0)
 text.TextColor3 = Color3.fromRGB(255, 255, 255)
 text.MultiLine = false
 text.Text = "AimFOV"
-text.PlaceholderText = "The radius of aim. Current "..AimFOV
+text.PlaceholderText = "The radius of aim. Preset "..AimFOV
 text.TextScaled = true
 text.ClearTextOnFocus = true
 text.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
@@ -333,7 +334,8 @@ local Camera = workspace.CurrentCamera
 
 
 -- Create FOV Circle
-local FOVCircle = Drawing.new("Circle")
+local FOVCircle
+FOVCircle = Drawing.new("Circle")
 FOVCircle.Color = Color3.fromRGB(255, 0, 0)
 FOVCircle.Thickness = 1.5
 FOVCircle.NumSides = 50
@@ -357,6 +359,31 @@ if FOVCircle then
     FOVCircle.Visible = AimbotEnabled
 end
 end)
+
+local del = Instance.new("TextButton")
+del.Parent = screenGui
+del.Size = UDim2.new(0.05, 0, 0.1, 0)
+del.Position = UDim2.new(0.6, 0, 0.175, 0)
+del.Text = "Set"
+del.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+del.TextColor3 = Color3.fromRGB(255, 255, 255)
+del.TextScaled = true
+
+local function delset()
+text:Destroy()
+wait(0.1)
+text1:Destroy()
+wait(0.1)
+text2:Destroy()
+wait(0.1)
+text4:Destroy()
+wait(0.1)
+del:Destroy()
+end
+
+del.MouseButton1Click:Connect(delset)
+del.TouchTap:Connect(delset)
+
 
 local function ToggleAimbot()
     AimbotEnabled = not AimbotEnabled
