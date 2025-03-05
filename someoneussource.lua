@@ -1330,15 +1330,6 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Kawaii Black hole",
-   Interact = 'Click',
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/hellohellohell012321 /KAWAII-BLACK-HOLE/main/kawaii-black-hole.lua", true))()
-   end,
-})
-
-local Button = Tab:CreateButton({
    Name = "RoChips",
    Interact = 'Click',
    Callback = function()
