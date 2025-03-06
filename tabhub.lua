@@ -5,20 +5,20 @@
 
 
 
+task.spawn(function() -- Enclosing in a function block
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "This might take a while.",
+            Text = "Tab Hub is loading, we will notify you back!",
+            Duration = 5, -- Time in seconds
+        })
 
-local letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-local randomLetter
-for i = 1, 10 do
-    local randomIndex = math.random(1, #letters)
-    local randomLetter = letters:sub(randomIndex, randomIndex)
-    randomLetter = randomLetter
-end
+end) -- Closing function block
+
 
 
 local a
 a = 0
 
-local player = game:GetService("Players")
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Tab Hub",
@@ -42,19 +42,17 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
-		--ignore this key system i just wanna troll my freind
-if player.UserID ~= 7668463473 and randomLetter then
-   KeySystem = true, -- Set this to true to use our key system
+
+   KeySystem = false, -- Set this to true to use our key system
    KeySettings = {
-      Title = "apalu",
-      Subtitle = "key nya "..randomLetter,
-      Note = "harus sama salah dikit ga bisa yahaha", -- Use this to tell the user how to get a key
+      Title = "hi",
+      Subtitle = "hi",
+      Note = "hi", -- Use this to tell the user how to get a key
       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
-      Key = {randomLetter} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+      Key = {"hi"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
-end
 })
 
 local Tab = Window:CreateTab("Scripts", "scroll-text")
@@ -335,15 +333,7 @@ end,
 })
 
 local Section = Tab:CreateSection("Section 3")
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "Chat Bypass",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet("https://pastebin.com/raw/aqmCAz7b"))()
 
-   end,
-})
 
 local Tab = Window:CreateTab("Other", "computer")
 
@@ -455,18 +445,22 @@ local Button = Tab:CreateButton({
 
 local Tab = Window:CreateTab("Built-in", "github")
 
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Loaded!",
+            Text = "Tab Hub is loaded",
+            Duration = 1, -- Time in seconds
+        })
 
 
-
-
-
+task.spawn(function() wait(2.5)
 print(a.." scripts are available")
 if a then
     Rayfield:Notify({
     Title = "Script Checker",
-    Content = "Tab Hub Currently has "..a.." scripts available free!",
+    Content = "Tab Hub Currently has "..a.." scripts available for free!",
     Duration = 10,
     Image = "scroll",
 })
 
 end
+end)
