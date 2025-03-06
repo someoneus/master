@@ -30,11 +30,23 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢦⡀⠈⢿⣿⣿⣿⣿⣿⣿⣿⠟⠁⣠⡾⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣦⠀⠻⢿⣿⣿⣿⠿⠋⠀⣴⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⢶⣤⣤⣤⣤⣤⡴⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-			credit to rayfield for library]]
+			cool looking guy i found on the internet
 
 
-local plr = gam:GetService("Players")
-local locnm = plr.LocalPlayer.Name
+            credit to rayfield for library]]
+
+print("rrrrr   aaaaa   ttttt")
+print("r   r   a   a     t")
+print("rrrrr   aaaaa     t")
+print("r    r  a   a     t")
+print("r    r  a   a     t")
+print("")
+warn("w     w     w   aaaaa   rrrrr   eeeee")
+warn("w     w     w   a   a   r   r   e")
+warn(" w   w w   w    aaaaa   rrrrr   eeeee")
+warn("  w w   w w     a   a   r    r  e")
+warn("   w     w      a   a   r    r  eeeee")
+
 
 
 task.spawn(function() -- Enclosing in a function block
@@ -74,8 +86,7 @@ local Window = Rayfield:CreateWindow({
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
 
-if locnm ~= "oeind36" then
-			KeySystem = true
+
    KeySystem = KeySystem, -- Set this to true to use our key system
    KeySettings = {
       Title = "hi",
@@ -86,7 +97,7 @@ if locnm ~= "oeind36" then
       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
       Key = {"hi"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
-		end
+
 })
 
 local Tab = Window:CreateTab("Scripts", "scroll-text")
@@ -466,7 +477,7 @@ local Button = Tab:CreateButton({
 })
 a = a + 1
 local Button = Tab:CreateButton({
-   Name = "Internal executor - RoExec",
+   Name = "Internal executor - RoExec (has key)",
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://gist.githubusercontent.com/Axchs/af0848c3885194d54f2c181562675126/raw/96862bc46256bcadde0df0cd799cc7a998bcad82/gistfile1.txt"))()
