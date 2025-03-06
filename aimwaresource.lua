@@ -364,7 +364,7 @@ end)
 local del = Instance.new("TextButton")
 del.Parent = screenGui
 del.Size = UDim2.new(0.05, 0, 0.1, 0)
-del.Position = UDim2.new(0.6, 0, 0.175, 0)
+del.Position = UDim2.new(0.6, 0, 0, 0)
 del.Font = Enum.Font.Nunito
 del.Text = "Hide Settings"
 del.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
@@ -374,11 +374,11 @@ del.TextScaled = true
 local function delset()
 text.Visible = not text.Visible
 wait(0.1)
-text1.Visible = not text.Visible
+text1.Visible = text.Visible
 wait(0.1)
-text2.Visible = not text.Visible
+text2.Visible = text.Visible
 wait(0.1)
-text4.Visible = not text.Visible
+text4.Visible = text.Visible
 wait(0.1)
 
 end
