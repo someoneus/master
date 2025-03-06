@@ -23,7 +23,7 @@ local PredictionStrength
 AimFOV = 100
 MaxDistance = 128
 Smoothness = 0.5
-PredictionStrength = 1.5
+PredictionStrength = 5
 
 
 
@@ -271,7 +271,7 @@ end
 -- Aimbot Tracking
 RunService.RenderStepped:Connect(function()
     if not AimbotEnabled then return end
-    
+    if AimbotEnabled then
     -- Keep FOV Circle in the center of the screen
     FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
 
@@ -285,6 +285,7 @@ RunService.RenderStepped:Connect(function()
         -- Smooth camera lock instead of hard lock
         local newCFrame = CFrame.new(Camera.CFrame.Position, targetPosition)
         Camera.CFrame = Camera.CFrame:Lerp(newCFrame, Smoothness)
+        end
     end
 end)
 
@@ -364,21 +365,22 @@ local del = Instance.new("TextButton")
 del.Parent = screenGui
 del.Size = UDim2.new(0.05, 0, 0.1, 0)
 del.Position = UDim2.new(0.6, 0, 0.175, 0)
-del.Text = "Set"
+del.Font = Enum.Font.Nunito
+del.Text = "Hide Settings"
 del.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 del.TextColor3 = Color3.fromRGB(255, 255, 255)
 del.TextScaled = true
 
 local function delset()
-text:Destroy()
+text.Visible = not text.Visible
 wait(0.1)
-text1:Destroy()
+text1.Visible = not text.Visible
 wait(0.1)
-text2:Destroy()
+text2.Visible = not text.Visible
 wait(0.1)
-text4:Destroy()
+text4.Visible = not text.Visible
 wait(0.1)
-del:Destroy()
+
 end
 
 del.MouseButton1Click:Connect(delset)
@@ -441,7 +443,7 @@ end
 
 RunService.RenderStepped:Connect(function()
     if not AimbotEnabled then return end
-    
+    if AimbotEnabled then
     FOVCircle.Position = Vector2.new(Camera.ViewportSize.X / 2, Camera.ViewportSize.Y / 2)
 
     local target = GetClosestPlayer()  -- Continuously check for closest player
@@ -453,6 +455,7 @@ RunService.RenderStepped:Connect(function()
         
         local newCFrame = CFrame.new(Camera.CFrame.Position, predictedPosition)
         Camera.CFrame = Camera.CFrame:Lerp(newCFrame, Smoothness)
+        end
     end
 end)
 
@@ -503,6 +506,8 @@ FOVCircle:Remove()
 FOVCircle.Visible = nil
 FOVCircle = nil
 FOV = nil
+Smoothness = nil
+PredictionStrength = nil
 wait(0.5)
 print("Destroy completed")
 screenGui:Destroy()
