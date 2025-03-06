@@ -40,7 +40,7 @@ local locnm = plr.LocalPlayer.Name
 task.spawn(function() -- Enclosing in a function block
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "This might take a while.",
-            Text = "Tab Hub is loading, we will notify you back!",
+            Text = "rAt-WarE is loading, we will notify you back!",
             Duration = 5, -- Time in seconds
         })
 
@@ -53,9 +53,9 @@ a = 0
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "Tab Hub",
+   Name = "rAt-WarE",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
-   LoadingTitle = "Tab Hub",
+   LoadingTitle = "rAt-WarE",
    LoadingSubtitle = "by someoneus",
    Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
 
@@ -515,7 +515,7 @@ local Tab = Window:CreateTab("Built-in", "github")
 
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Loaded!",
-            Text = "Tab Hub is loaded",
+            Text = "rAt-WarE is loaded",
             Duration = 1, -- Time in seconds
         })
 
