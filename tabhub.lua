@@ -39,6 +39,11 @@
 
 
 
+
+
+local a
+a = 0
+
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
    Name = "Tab Hub",
@@ -90,6 +95,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet('https://raw.githubusercontent.com/Just3itx/Lunor-Loadstrings/refs/heads/main/Loader'))()
+			a = a + 1
    end,
 })
 
@@ -98,6 +104,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+			a = a + 1
    end,
 })
 
@@ -106,6 +113,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+			a = a + 1
    end,
 })
 
@@ -114,6 +122,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Doors.lua"))()
+			a = a + 1
    end,
 })
 
@@ -133,11 +142,39 @@ Delta (IOS);
 ]]
 -- discord.gg/pwnyard   if expired: discord.gg/rzTDfMGHJy
 loadstring(game:HttpGet("https://raw.githubusercontent.com/PWNYard/HoHo/refs/heads/main/PWN.lua"))();
+			a = a + 1
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Blue Lock: RIVALS",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/selciawashere/screepts/refs/heads/main/BLRTBDMOBILEKEYSYS",true))()
+			a = a + 1
    end,
 })
 
 local Section = Tab:CreateSection("Section 2")
 
+
+local Button = Tab:CreateButton({
+   Name = "PLS Donate",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/Ahmadv999/PleaseDondate/refs/heads/main/PleaseDonateScript'))()
+			a = a + 1
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "The Rake Remastered",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9ccd19089cb4d74bd2ac8902fb910027.lua"))()
+			a = a + 1
+   end,
+})
 
 local Button = Tab:CreateButton({
    Name = "Brookhaven FE Play sounds (cannot play sounds more than 2s)",
@@ -147,6 +184,7 @@ local Button = Tab:CreateButton({
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/ameicaa0/brookhaven/refs/heads/main/brookhaven%20script.txt"))()
+			a = a + 1
    end,
 })
 
@@ -158,6 +196,7 @@ local Button = Tab:CreateButton({
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/fratelevostru9999/src/refs/heads/main/evade%20vhns",true))()
+			a = a + 1
    end,
 })
 
@@ -169,6 +208,7 @@ local Button = Tab:CreateButton({
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 loadstring(game:HttpGet("https://apocscripts.com/ApocHub.txt"))()
+			a = a + 1
    end,
 })
 
@@ -180,6 +220,7 @@ local Button = Tab:CreateButton({
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 loadstring(game:HttpGet("https://rawscripts.net/raw/Natural-Disaster-Survival-Super-ring-V4-24296"))()
+			a = a + 1
    end,
 })
 
@@ -192,6 +233,7 @@ local Button = Tab:CreateButton({
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealNihilize/WhiteLkidd-hub/refs/heads/main/Prison%20life%20Hub"))()
+			a = a + 1
    end,
 })
 
@@ -203,6 +245,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
+			a = a + 1
    end,
 })
 
@@ -211,6 +254,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+			a = a + 1
    end,
 })
 
@@ -222,6 +266,7 @@ local Button = Tab:CreateButton({
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
 loadstring(game:HttpGet("https://raw.githubusercontent.com/QRTUI10/Vamp/refs/heads/main/Free%20Version"))()
+			a = a + 1
    end,
 })
 
@@ -235,6 +280,7 @@ local Button = Tab:CreateButton({
 getgenv().Color = "default" --[[white,black, brown,green,cyan,blue,pink,purple,red,yellow,orange ]]--
 getgenv().TextColor = "default" --[[ rgb,white,black, brown,green,cyan,blue,pink,purple,red,yellow,orange ]]--
 loadstring(game:HttpGet("https://raw.githubusercontent.com/rndmq/Serverlist/refs/heads/main/Loader"))()
+			a = a + 1
    end,
 })
 
@@ -248,6 +294,7 @@ local Button = Tab:CreateButton({
 ]]
 -- scirpt is made by invertedTh and is also the first best sicrpt for bdsf enjoy it while it lasted and also give feedback if something is broken
 loadstring(game:HttpGet("https://raw.githubusercontent.com/invertedth/kewlzhubbdfs/refs/heads/main/Bdsf.lua"))()
+			a = a + 1
    end,
 })
 
@@ -264,8 +311,61 @@ local Section = Tab:CreateSection("Section 3")
 local Tab = Window:CreateTab("Hub's", "shell")
 
 local Section = Tab:CreateSection("Section 1")
+
+local Button = Tab:CreateButton({
+   Name = "Troll Animation",
+   Callback = function()
+   -- The function that takes place when the button is pressed    
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ShutUpJamesTheLoser/freaky/refs/heads/main/fe", true))()
+			a = a + 1
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "FE R6 Anims",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/redxs-dosx/R6-Anim-Hub/refs/heads/main/Hub%20Script%20(.lua)'))()
+			a = a + 1
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "FE R6 Animation",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ExploitFin/AquaMatrix/refs/heads/AquaMatrix/AquaMatrix"))()
+			a = a + 1
+   end,
+})
+
+
 local Section = Tab:CreateSection("Section 2")
+
+local Button = Tab:CreateButton({
+   Name = "RoChips",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+    if "you wanna use rochips universal" then
+	    local z_x,z_z="gzrux646yj/raw/main.ts","https://glot.io/snippets/"
+	    local im,lonely,z_c=task.wait,game,loadstring
+	    z_c(lonely:HttpGet(z_z..""..z_x))()
+	    return ("This will load in about 2 - 30 seconds" or "according to your device and executor")
+    end
+			a = a + 1
+end,
+})
+
 local Section = Tab:CreateSection("Section 3")
+
+local Button = Tab:CreateButton({
+   Name = "Chat Bypass",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://pastebin.com/raw/aqmCAz7b"))()
+			a = a + 1
+   end,
+})
 
 local Tab = Window:CreateTab("Other", "computer")
 
@@ -278,6 +378,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet('https://raw.githubusercontent.com/Its-LALOL/LALOL-Hub/main/Backdoor-Scanner/script'))()
+			a = a + 1
    end,
 })
 
@@ -286,6 +387,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://paste.ee/r/GipgWZb8"))()
+			a = a + 1
    end,
 })
 
@@ -294,6 +396,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://gist.githubusercontent.com/Uylost/960b592d7fc7161c3e6de0047547d874/raw/cc0e9ca436afe2c3e253fdb357d1a61efd576098/gistfile1.txt"))()
+			a = a + 1
    end,
 })
 
@@ -302,6 +405,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-MoreUNC-13110"))()
+			a = a + 1
    end,
 })
 
@@ -312,6 +416,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://pastebin.com/raw/tstrtDFD"))()
+			a = a + 1
    end,
 })
 
@@ -320,6 +425,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/chesslovers69/Super-ring-parts-v6/refs/heads/main/Bylukaslol"))()
+			a = a + 1
    end,
 })
 
@@ -328,6 +434,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://gist.githubusercontent.com/Axchs/af0848c3885194d54f2c181562675126/raw/96862bc46256bcadde0df0cd799cc7a998bcad82/gistfile1.txt"))()
+			a = a + 1
    end,
 })
 
@@ -335,6 +442,7 @@ local Button = Tab:CreateButton({
    Name = "Server Finder",
    Callback = function()
    loadstring(game:HttpGet("https://raw.githubusercontent.com/RealBatu20/AI-Scripts-2025/refs/heads/main/LowServerFinderGUI.lua", true))()
+			a = a + 1
    end,
 })
 
@@ -345,6 +453,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/InfernusScripts/Other-Stuff/main/ExecutorInternal.lua"))()
+			a = a + 1
    end,
 })
 
@@ -353,6 +462,7 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Roblox-Anticheat-finder-30874"))()
+			a = a + 1
    end,
 })
 
@@ -361,7 +471,23 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/someoneus/master/refs/heads/main/aimwaresource.lua"))()
+			a = a + 1
    end,
 })
 
 local Tab = Window:CreateTab("Built-in", "github")
+
+
+
+
+
+
+
+if a then
+Rayfield:Notify({
+   Title = "Script Checker",
+   Content = "Tab Hub Currently has "a" scripts available free!",
+   Duration = 6.5,
+   Image = "scroll",
+})
+end
