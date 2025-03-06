@@ -83,15 +83,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "Zombie Attack - Voidz",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
-   end,
-})
-
-
+local Section = Tab:CreateSection("Section 1")
 
 local Button = Tab:CreateButton({
    Name = "Dead Rails - Lunor",
@@ -126,36 +118,26 @@ local Button = Tab:CreateButton({
 })
 
 local Button = Tab:CreateButton({
-   Name = "Muscle Legends - SpeedHubX",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Muscle Legends - Vamp",
+   Name = "Blox fruit - HoHo hub (Crack)",
    Callback = function()
    -- The function that takes place when the button is pressed
 			--[[
 	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
 ]]
-loadstring(game:HttpGet("https://raw.githubusercontent.com/QRTUI10/Vamp/refs/heads/main/Free%20Version"))()
+--[[ PWNED by PWN Yard
+Issues have been reported for the following executors (most likely not supported):
+
+Atlantis;
+Codex;
+Delta (IOS);
+]]
+-- discord.gg/pwnyard   if expired: discord.gg/rzTDfMGHJy
+loadstring(game:HttpGet("https://raw.githubusercontent.com/PWNYard/HoHo/refs/heads/main/PWN.lua"))();
    end,
 })
 
-local Button = Tab:CreateButton({
-   Name = "Size Legends Simulator",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			--[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-getgenv().Color = "default" --[[white,black, brown,green,cyan,blue,pink,purple,red,yellow,orange ]]--
-getgenv().TextColor = "default" --[[ rgb,white,black, brown,green,cyan,blue,pink,purple,red,yellow,orange ]]--
-loadstring(game:HttpGet("https://raw.githubusercontent.com/rndmq/Serverlist/refs/heads/main/Loader"))()
-   end,
-})
+local Section = Tab:CreateSection("Section 2")
+
 
 local Button = Tab:CreateButton({
    Name = "Brookhaven FE Play sounds (cannot play sounds more than 2s)",
@@ -191,37 +173,6 @@ loadstring(game:HttpGet("https://apocscripts.com/ApocHub.txt"))()
 })
 
 local Button = Tab:CreateButton({
-   Name = "be dead forever simulator",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			--[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
--- scirpt is made by invertedTh and is also the first best sicrpt for bdsf enjoy it while it lasted and also give feedback if something is broken
-loadstring(game:HttpGet("https://raw.githubusercontent.com/invertedth/kewlzhubbdfs/refs/heads/main/Bdsf.lua"))()
-   end,
-})
-
-local Button = Tab:CreateButton({
-   Name = "Blox fruit - HoHo hub (Crack)",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			--[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
---[[ PWNED by PWN Yard
-Issues have been reported for the following executors (most likely not supported):
-
-Atlantis;
-Codex;
-Delta (IOS);
-]]
--- discord.gg/pwnyard   if expired: discord.gg/rzTDfMGHJy
-loadstring(game:HttpGet("https://raw.githubusercontent.com/PWNYard/HoHo/refs/heads/main/PWN.lua"))();
-   end,
-})
-
-local Button = Tab:CreateButton({
    Name = "Natural Disaster - Super ring",
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -244,11 +195,83 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealNihilize/White
    end,
 })
 
+
+local Section = Tab:CreateSection("Section 3")
+
+local Button = Tab:CreateButton({
+   Name = "Zombie Attack - Voidz",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Muscle Legends - SpeedHubX",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Muscle Legends - Vamp",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://raw.githubusercontent.com/QRTUI10/Vamp/refs/heads/main/Free%20Version"))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Size Legends Simulator",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+getgenv().Color = "default" --[[white,black, brown,green,cyan,blue,pink,purple,red,yellow,orange ]]--
+getgenv().TextColor = "default" --[[ rgb,white,black, brown,green,cyan,blue,pink,purple,red,yellow,orange ]]--
+loadstring(game:HttpGet("https://raw.githubusercontent.com/rndmq/Serverlist/refs/heads/main/Loader"))()
+   end,
+})
+
+
+local Button = Tab:CreateButton({
+   Name = "be dead forever simulator",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- scirpt is made by invertedTh and is also the first best sicrpt for bdsf enjoy it while it lasted and also give feedback if something is broken
+loadstring(game:HttpGet("https://raw.githubusercontent.com/invertedth/kewlzhubbdfs/refs/heads/main/Bdsf.lua"))()
+   end,
+})
+
+
+
+
+
 local Tab = Window:CreateTab("Key-Scripts", "key-round")
 
-local Tab = Window:CreateTab("Hub's", "house")
+local Section = Tab:CreateSection("Section 1")
+local Section = Tab:CreateSection("Section 2")
+local Section = Tab:CreateSection("Section 3")
 
-local Tab = Window:CreateTab("Other", "house-plus")
+local Tab = Window:CreateTab("Hub's", "shell")
+
+local Section = Tab:CreateSection("Section 1")
+local Section = Tab:CreateSection("Section 2")
+local Section = Tab:CreateSection("Section 3")
+
+local Tab = Window:CreateTab("Other", "computer")
+
+
+
+local Section = Tab:CreateSection("Section 1")
 
 local Button = Tab:CreateButton({
    Name = "LALOL Backdoor",
@@ -282,20 +305,13 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Section = Tab:CreateSection("Section 2")
+
 local Button = Tab:CreateButton({
    Name = "Black hole",
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://pastebin.com/raw/tstrtDFD"))()
-   end,
-})
-
-
-
-local Button = Tab:CreateButton({
-   Name = "Server Finder",
-   Callback = function()
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/RealBatu20/AI-Scripts-2025/refs/heads/main/LowServerFinderGUI.lua", true))()
    end,
 })
 
@@ -314,6 +330,15 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet("https://gist.githubusercontent.com/Axchs/af0848c3885194d54f2c181562675126/raw/96862bc46256bcadde0df0cd799cc7a998bcad82/gistfile1.txt"))()
    end,
 })
+
+local Button = Tab:CreateButton({
+   Name = "Server Finder",
+   Callback = function()
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/RealBatu20/AI-Scripts-2025/refs/heads/main/LowServerFinderGUI.lua", true))()
+   end,
+})
+
+local Section = Tab:CreateSection("Section 3")
 
 local Button = Tab:CreateButton({
    Name = "Internal executor - UI (pc only)",
