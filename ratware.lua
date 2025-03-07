@@ -545,9 +545,9 @@ local Button = Tab:CreateButton({
 })
 
 local Tab = Window:CreateTab("Built-in", "github")
-a = a + 1
+
 local Button = Tab:CreateButton({
-   Name = "Steal Tools",
+   Name = "Steal Tools (Risk)",
    Callback = function()
    -- The function that takes place when the button is pressed
 local player = game:GetService("Players").LocalPlayer
@@ -572,6 +572,31 @@ for _, tool in pairs(game:GetDescendants()) do
     end
 end
 
+if foundTool then
+local player = game:GetService("Players").LocalPlayer
+local backpack = player:FindFirstChild("Backpack")
+
+for _, tool in pairs(backpack:GetChildren()) do
+    if tool:IsA("Tool") then
+        for _, child in pairs(tool:GetDescendants()) do
+            if child:IsA("LocalScript") then
+                local parentTool = child.Parent
+                local clonedScript = child:Clone() -- Clone the script
+                child:Destroy() -- Remove the original script
+                clonedScript.Parent = parentTool -- Re-add the script (forcing a restart)
+            end
+        end
+    end
+end
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = "Tools Stolen",
+    Text = "Tools could be broken due to server-sided scripts.",
+    Duration = 5
+})
+end
+
+
 -- Send notification if no tools were found
 if not foundTool then
     game:GetService("StarterGui"):SetCore("SendNotification", {
@@ -580,6 +605,7 @@ if not foundTool then
         Duration = 5
     })
 end
+
 
 
    end,
