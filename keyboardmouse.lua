@@ -75,9 +75,11 @@ end)
 -- Detect Key Presses & Releases
 UserInputService.InputBegan:Connect(function(input, gameProcessed)
     if not gameProcessed and input.KeyCode == ebind then
+            task.wait(0.025)
         mouse1press() -- Hold Left Click
         texte.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     elseif not gameProcessed and input.KeyCode == qbind then
+            task.wait(0.025)
         mouse2press() -- Hold Right Click
         textq.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     end
