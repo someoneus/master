@@ -182,6 +182,17 @@ local Button = Tab:CreateButton({
 
    end,
 })
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Dead Rails - SpeedHubX",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+
+   end,
+})
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Blox fruit - HoHo hub (Crack)",
@@ -252,6 +263,28 @@ local Button = Tab:CreateButton({
 
    end,
 })
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Gym League - SpeedHubX",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/main/Gym%20League.lua"))()
+
+   end,
+})
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Jujutsu Infinite - SpeedHubX",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games/refs/heads/main/Jujutsu%20Infinite.lua"))()
+
+   end,
+})
+
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Brookhaven FE Play sounds (cannot play sounds more than 2s)",
@@ -460,6 +493,16 @@ loadstring(game:HttpGet("https://github.com/Synergy-Networks/products/raw/main/B
    end,
 })
 local Section = Tab:CreateSection("Section 3")
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Build a Boat - NovBoat",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/novakoolhub/Scripts/main/Scripts/NovBoatR1"))()
+
+   end,
+})
 
 local Tab = Window:CreateTab("Hub's", "shell")
 
