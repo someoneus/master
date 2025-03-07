@@ -123,6 +123,30 @@ local Button = Tab:CreateButton({
 })
 
 local Section = Tab:CreateSection("Section 1")
+
+
+
+
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Pet Simulator 99 - Redz Hub",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/pablopoep/PetSimulator99/main/redz9999.lua"))()
+   end,
+})
+
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Blox Fruit - Redz Hub",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/BloxFruits/refs/heads/main/Source.lua"))()
+   end,
+})
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Dead Rails - Lunor",
@@ -189,6 +213,26 @@ local Button = Tab:CreateButton({
 })
 
 local Section = Tab:CreateSection("Section 2")
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Meme Sea - Redz Hub",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/MemeSea/refs/heads/main/Source.lua"))()
+   end,
+})
+
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Blade Ball - Redz Hub",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()
+   end,
+})
+
 
 a = a + 1
 local Button = Tab:CreateButton({
@@ -274,6 +318,19 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealNihilize/White
 local Section = Tab:CreateSection("Section 3")
 a = a + 1
 local Button = Tab:CreateButton({
+   Name = "Slap Battles",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c15fbebc480c0f85930b37b76787c6b7.lua"))()
+   end,
+})
+
+
+a = a + 1
+local Button = Tab:CreateButton({
    Name = "Zombie Attack - Voidz",
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -281,6 +338,17 @@ local Button = Tab:CreateButton({
 
    end,
 })
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Legend of Speed",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://rawscripts.net/raw/Legends-Of-Speed-Simple-Legend-Auto-Farm-28647"))()
+   end,
+})
+
+
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Muscle Legends - SpeedHubX",
@@ -330,7 +398,14 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/invertedth/kewlzhubbd
 
    end,
 })
-
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Brookhaven - Chaos Hub",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://pastebin.com/raw/m0zjJLTv"))()
+   end,
+})
 
 
 
@@ -373,6 +448,17 @@ script_key="";
 })
 
 local Section = Tab:CreateSection("Section 2")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "AI ChatBot",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+loadstring(game:HttpGet("https://github.com/Synergy-Networks/products/raw/main/BetterBypasser/loader.lua"))()
+   end,
+})
 local Section = Tab:CreateSection("Section 3")
 
 local Tab = Window:CreateTab("Hub's", "shell")
