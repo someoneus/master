@@ -541,6 +541,35 @@ local Button = Tab:CreateButton({
 
 local Tab = Window:CreateTab("Built-in", "github")
 
+local Button = Tab:CreateButton({
+   Name = "Steal Tools",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			local player = game:GetService("Players").LocalPlayer
+local backpack = player:FindFirstChild("Backpack")
+
+local foundTool = false -- Flag to check if tools exist
+
+for _, tool in pairs(game:GetDescendants()) do
+    if tool:IsA("Tool") then
+        foundTool = true -- Mark that at least one tool was found
+        local clonedTool = tool:Clone()
+        clonedTool.Parent = backpack
+    end
+end
+
+-- Send notification if no tools were found
+if not foundTool then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "No Tools Found",
+        Text = "No tools were detected in the game.",
+        Duration = 5
+    })
+end
+
+   end,
+})
+
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Loaded!",
             Text = "rAt-WarE is loaded",
