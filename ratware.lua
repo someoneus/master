@@ -68,7 +68,7 @@ local seltitle
 seltitle = "rAt-WarE"
 
 if locplr == "oeind36" then
-	seltitle = "ardi bot"
+	seltitle = "aRdl b0t"
 end
 
 if locplr == "devilshmd" then
@@ -235,14 +235,7 @@ local Button = Tab:CreateButton({
 })
 
 
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "Blade Ball - Redz Hub",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/BladeBall/main/redz9999"))()
-   end,
-})
+
 
 
 a = a + 1
@@ -254,15 +247,7 @@ local Button = Tab:CreateButton({
 
    end,
 })
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "The Rake Remastered",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/9ccd19089cb4d74bd2ac8902fb910027.lua"))()
 
-   end,
-})
 
 a = a + 1
 local Button = Tab:CreateButton({
@@ -349,28 +334,10 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealNihilize/White
 
 
 local Section = Tab:CreateSection("Section 3")
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "Slap Battles",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			--[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c15fbebc480c0f85930b37b76787c6b7.lua"))()
-   end,
-})
 
 
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "Zombie Attack - Voidz",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet(('https://raw.githubusercontent.com/RTrade/Voidz/main/Games.lua'),true))()
 
-   end,
-})
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Legend of Speed",
@@ -467,18 +434,7 @@ local Button = Tab:CreateButton({
 -- https://discord.gg/zaphub
    end,
 })
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "Fisch - Native",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			--[[
-	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
-]]
-script_key="";
-(loadstring or load)(game:HttpGet("https://raw.githubusercontent.com/Native-lab/Native/main/loader.lua"))()
-   end,
-})
+
 
 local Section = Tab:CreateSection("Section 2")
 a = a + 1
@@ -676,7 +632,7 @@ local Button = Tab:CreateButton({
 local Tab = Window:CreateTab("Built-in", "github")
 
 local Button = Tab:CreateButton({
-   Name = "Steal Tools (Risk)",
+   Name = "Steal Tools (Risk and Client)",
    Callback = function()
    -- The function that takes place when the button is pressed
 local player = game:GetService("Players").LocalPlayer
