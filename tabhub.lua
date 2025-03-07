@@ -62,11 +62,18 @@ end) -- Closing function block
 
 local a
 a = 0
+local plr = game:GetService("Players")
+local locplr = plr.LocalPlayer.Name
+local seltitle
+seltitle = "rAt-WarE"
+if locplr == "oeind36" then
+	seltitle = "ardi bot"
+end
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = "rAt-WarE",
-   Icon = "circle-user-round", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+   Name = seltitle,
+   Icon = "rat", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "rAt-WarE",
    LoadingSubtitle = "by someoneus",
    Theme = "Default", -- Check https://docs.sirius.menu/rayfield/configuration/themes
