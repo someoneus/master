@@ -69,11 +69,11 @@ end
 -- Function to determine text color based on class
 local function getTextColor(class)
     local colors = {
-        Model = Color3.fromRGB(200, 50, 200),
+        Model = Color3.fromRGB(100, 10, 100),
         ModuleScript = Color3.fromRGB(200, 100, 200),
         Script = Color3.fromRGB(155, 155, 155),
         LocalScript = Color3.fromRGB(200, 200, 255),
-        MeshPart = Color3.fromRGB(200, 10, 200),
+        MeshPart = Color3.fromRGB(155, 50, 155),
     }
     return colors[class] or Color3.fromRGB(255, 255, 255) -- Default white if class isn't listed
 end
@@ -138,3 +138,45 @@ game.DescendantAdded:Connect(new)
 
 -- Listen for removed descendants (capture data before deletion)
 game.DescendantRemoving:Connect(del)
+
+local function makeDraggable(guiObject)
+    if not guiObject:IsA("GuiObject") then return end -- Ensure it's a valid GUI object
+
+    local dragToggle = false
+    local dragStart, startPos
+    local UIS = game:GetService("UserInputService")
+
+    guiObject.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragToggle = true
+            dragStart = input.Position
+            startPos = guiObject.Position
+        end
+    end)
+
+    guiObject.InputChanged:Connect(function(input)
+        if dragToggle and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+            local delta = input.Position - dragStart
+            guiObject.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+        end
+    end)
+
+    guiObject.InputEnded:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            dragToggle = false
+        end
+    end)
+end
+
+-- **Make all GUI elements draggable**
+local function makeAllDescendantsDraggable(parent)
+    for _, child in ipairs(parent:GetDescendants()) do
+        makeDraggable(child)
+    end
+end
+
+-- Apply to an existing GUI (Change "YourScreenGui" to your actual GUI)
+local screenGui = game.CoreGui:FindFirstChild("gui")
+if screenGui then
+    makeAllDescendantsDraggable(screenGui)
+end
