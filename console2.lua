@@ -29,11 +29,51 @@ title.TextScaled = true
 title.Text = "Debug"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.BackgroundTransparency = 1
+local box = Instance.new("TextBox")
+box.Parent = frame
+box.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+box.TextColor3 = Color3.fromRGB(255, 255, 255)
+box.Text = "Debounce"
+box.MultiLine = false
+box.PlaceholderText = "cooldown"
+box.TextScaled = true
+box.Font = Enum.Font.SourceSansSemibold
+box.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+box.Size = UDim2.new(0.15, 0, 0.1, 0)
+box.Position = UDim2.new(0.15, 0, 0.025, 0)
+box.FocusLost:Connect(function()
+local data = box.Text
+cd = tonumber(data)
+box.Text = "debounce is now "..tonumber(data)
+end)
 local ui = Instance.new("UIListLayout")
 ui.Parent = sframe
 ui.SortOrder = Enum.SortOrder.LayoutOrder
 ui.Padding = UDim.new(0, 0)
-
+local button = Instance.new("TextButton")
+button.Parent = frame
+button.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+button.TextColor3 = Color3.fromRGB(255, 255, 255)
+button.Text = "Clear logs"
+button.TextScaled = true
+button.Font = Enum.Font.SourceSansSemibold
+button.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+button.Size = UDim2.new(0.15, 0, 0.1, 0)
+button.Position = UDim2.new(0.3, 0, 0.025, 0)
+button.MouseButton1Click:Connect(function()
+for _, v in pairs(sframe:GetDescendants()) do
+            if v:IsA("TextLabel") then
+                v:Destroy()
+            end
+        end
+    end)
+button.TouchTap:Connect(function()
+for _, v in pairs(sframe:GetDescendants()) do
+            if v:IsA("TextLabel") then
+                v:Destroy()
+            end
+        end
+    end)
 local debounce = false
 local userScrolledUp = false
 
@@ -69,11 +109,14 @@ end
 -- Function to determine text color based on class
 local function getTextColor(class)
     local colors = {
-        Model = Color3.fromRGB(100, 10, 100),
+        Model = Color3.fromRGB(200, 10, 100),
         ModuleScript = Color3.fromRGB(200, 100, 200),
         Script = Color3.fromRGB(155, 155, 155),
         LocalScript = Color3.fromRGB(200, 200, 255),
         MeshPart = Color3.fromRGB(155, 50, 155),
+        Weld = Color3.fromRGB(80, 80, 80),
+        Tool = Color3.fromRGB(255, 140, 0),
+        Part = Color3.fromRGB(200, 200, 200),
     }
     return colors[class] or Color3.fromRGB(255, 255, 255) -- Default white if class isn't listed
 end
@@ -81,7 +124,7 @@ end
 local function new(descendant)
     if debounce then return end
     debounce = true
-    task.wait(0.15)
+    task.wait(cd)
     debounce = false
 
     if descendant:IsDescendantOf(core) or descendant:IsDescendantOf(game.Players) or not sframe then return end
@@ -111,7 +154,7 @@ local function del(descendant)
     task.defer(function()
         if debounce then return end
         debounce = true
-        task.wait(0.15)
+        task.wait(cd)
         debounce = false
 
         if not sframe then return end
@@ -175,8 +218,4 @@ local function makeAllDescendantsDraggable(parent)
     end
 end
 
--- Apply to an existing GUI (Change "YourScreenGui" to your actual GUI)
-local screenGui = game.CoreGui:FindFirstChild("gui")
-if screenGui then
-    makeAllDescendantsDraggable(screenGui)
-end
+makeAllDescendantsDraggable(gui)
