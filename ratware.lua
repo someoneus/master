@@ -516,6 +516,16 @@ local Tab = Window:CreateTab("Other", "computer")
 
 
 local Section = Tab:CreateSection("Section 1")
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Fake Verified",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+	loadstring(game:HttpGet("https://pastebin.com/raw/qJwH9964"))();
+   end,
+})
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Cart game ruiner 1.0",
@@ -572,6 +582,22 @@ local Button = Tab:CreateButton({
 
    end,
 })
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Annabypasser (check console)",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   --[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+warn("annabypasser : set your languange to Қазақ Тілі*") 
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AnnaRoblox/AnnaBypasser/refs/heads/main/AnnaBypasser.lua",true))()
+
+   end,
+})
+
 a = a + 1
 local Button = Tab:CreateButton({
    Name = "Super Ring",
