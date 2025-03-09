@@ -50,6 +50,23 @@ local ui = Instance.new("UIListLayout")
 ui.Parent = sframe
 ui.SortOrder = Enum.SortOrder.LayoutOrder
 ui.Padding = UDim.new(0, 0)
+local x = Instance.new("TextButton")
+x.Parent = frame
+x.Size = UDim2.new(0.1, 0, 0.1, 0)
+x.Position = UDim2.new(0.9, 0, 0, 0)
+x.TextScaled = true
+x.TextColor3 = Color3.fromRGB(255, 155, 155)
+x.BackgroundTransparency = 1
+x.MouseButton1Click:Connect(function()
+if gui then
+            gui:Destroy()
+        end
+    end)
+x.TouchTap:Connect(function()
+if gui then
+            gui:Destroy()
+        end
+    end)
 local button = Instance.new("TextButton")
 button.Parent = frame
 button.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
@@ -74,6 +91,7 @@ for _, v in pairs(sframe:GetDescendants()) do
             end
         end
     end)
+
 local debounce = false
 local userScrolledUp = false
 
