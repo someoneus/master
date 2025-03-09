@@ -1,4 +1,5 @@
---output cool stuff
+--a bit laggy
+local debris = game:GetService("Debris")
 local core = game:GetService("CoreGui")
 local dupe = core:FindFirstChild("d3bug")
 if dupe then
@@ -29,23 +30,110 @@ title.TextScaled = true
 title.Text = "Debug"
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.BackgroundTransparency = 1
+local box1 = Instance.new("TextBox")
+box1.Parent = frame
+box1.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+box1.TextColor3 = Color3.fromRGB(255, 255, 255)
+box1.Text = "Debounce"
+box1.MultiLine = false
+box1.PlaceholderText = "cooldown"
+box1.TextScaled = true
+box1.Font = Enum.Font.SourceSansSemibold
+box1.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+box1.Size = UDim2.new(0.15, 0, 0.1, 0)
+box1.Position = UDim2.new(0.15, 0, 0.025, 0)
+box1.FocusLost:Connect(function()
+local data = box1.Text
+cd = tonumber(data)
+box1.Text = "debounce is now "..tonumber(data)
+end)
 local box = Instance.new("TextBox")
 box.Parent = frame
 box.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 box.TextColor3 = Color3.fromRGB(255, 255, 255)
-box.Text = "Debounce"
+box.Text = "Search"
 box.MultiLine = false
-box.PlaceholderText = "cooldown"
+box.PlaceholderText = "search logs"
 box.TextScaled = true
 box.Font = Enum.Font.SourceSansSemibold
 box.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 box.Size = UDim2.new(0.15, 0, 0.1, 0)
-box.Position = UDim2.new(0.15, 0, 0.025, 0)
+box.Position = UDim2.new(0.45, 0, 0.025, 0)
+
+-- Hidden container for non-matching elements
+local container = Instance.new("Frame")
+container.Visible = false
+container.Parent = gui
+
 box.FocusLost:Connect(function()
-local data = box.Text
-cd = tonumber(data)
-box.Text = "debounce is now "..tonumber(data)
+    local input = box.Text:lower() -- Convert to lowercase for case-insensitive search
+
+    if input == nil or input == "" then
+        -- Restore all elements to `sframe` if search is cleared
+        for _, v in pairs(container:GetChildren()) do
+            wait(0.05)
+            if v:IsA("TextLabel") then
+                v.Parent = sframe
+                v.Visible = true
+            end
+        end
+        return
+    end
+
+    -- Filter and move non-matching elements to `container`
+    for _, v in pairs(sframe:GetChildren()) do
+        if v:IsA("TextLabel") then
+            if string.find(v.Text:lower(), input) then
+                v.Visible = true
+            else
+                v.Visible = false
+                v.Parent = container
+            end
+        end
+    end
+    local textm = Instance.new("TextLabel")
+    textm.Parent = sframe
+    textm.TextSize = 18
+    textm.Size = UDim2.new(1, 0, 0.1, 0)
+    textm.AutomaticSize = Enum.AutomaticSize.Y
+    textm.Text = "-- search "..input.." ended here"
+    textm.TextScaled = false
+    textm.TextColor3 = Color3.fromRGB(200, 200, 200)
+    textm.BackgroundTransparency = 1
+    textm.TextXAlignment = Enum.TextXAlignment.Left
+    textm.Font = Enum.Font.Code
+    textm.TextWrapped = true
+        task.spawn(function()
+        task.wait(db)
+        textm:Destroy()
+        end)
+
 end)
+
+local box = Instance.new("TextBox")
+box.Parent = frame
+box.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+box.TextColor3 = Color3.fromRGB(255, 255, 255)
+box.Text = "debris time"
+box.MultiLine = false
+box.PlaceholderText = "0 is inf"
+box.TextScaled = true
+box.Font = Enum.Font.SourceSansSemibold
+box.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+box.Size = UDim2.new(0.15, 0, 0.1, 0)
+box.Position = UDim2.new(0.60, 0, 0.025, 0)
+local db
+db = 10
+box.FocusLost:Connect(function()
+local input = box.Text
+input = tonumber(input)
+if input == 0 then
+    input = math.huge
+    else
+    db = input
+end
+end)
+
 local ui = Instance.new("UIListLayout")
 ui.Parent = sframe
 ui.SortOrder = Enum.SortOrder.LayoutOrder
@@ -148,20 +236,26 @@ local function new(descendant)
 
     if descendant:IsDescendantOf(core) or descendant:IsDescendantOf(game.Players) or not sframe then return end
 
-    local text = Instance.new("TextLabel")
-    text.Parent = sframe
-    text.TextSize = 18
-    text.Size = UDim2.new(1, 0, 0.1, 0)
-    text.AutomaticSize = Enum.AutomaticSize.Y
-    text.Text = "new [" .. descendant.ClassName .. "] " .. getFullPath(descendant)
-    text.TextScaled = false
-    text.TextColor3 = getTextColor(descendant.ClassName)
-    text.BackgroundTransparency = 1
-    text.TextXAlignment = Enum.TextXAlignment.Left
-    text.Font = Enum.Font.Code
-    text.TextWrapped = true
+    local textm = Instance.new("TextLabel")
+    textm.Parent = sframe
+    textm.TextSize = 18
+    textm.Size = UDim2.new(1, 0, 0.1, 0)
+    textm.AutomaticSize = Enum.AutomaticSize.Y
+    textm.Text = "new [" .. descendant.ClassName .. "] " .. getFullPath(descendant)
+    textm.TextScaled = false
+    textm.TextColor3 = getTextColor(descendant.ClassName)
+    textm.BackgroundTransparency = 0.75
+    textm.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+    textm.TextXAlignment = Enum.TextXAlignment.Left
+    textm.Font = Enum.Font.Code
+    textm.TextWrapped = true
+
 
     scrollToBottom()
+        task.spawn(function()
+        task.wait(db)
+        textm:Destroy()
+        end)
 end
 
 local function del(descendant)
@@ -186,12 +280,17 @@ local function del(descendant)
         text.Text = "removed [" .. class .. "] " .. fullPath
         text.TextScaled = false
         text.TextColor3 = getTextColor(class)
-        text.BackgroundTransparency = 1
+        text.BackgroundTransparency = 0.75
+        text.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
         text.TextXAlignment = Enum.TextXAlignment.Left
         text.Font = Enum.Font.Code
         text.TextWrapped = true
 
         scrollToBottom()
+        task.spawn(function()
+        task.wait(db)
+        text:Destroy()
+        end)
     end)
 end
 
