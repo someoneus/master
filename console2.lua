@@ -57,6 +57,7 @@ x.Position = UDim2.new(0.9, 0, 0, 0)
 x.TextScaled = true
 x.TextColor3 = Color3.fromRGB(255, 155, 155)
 x.BackgroundTransparency = 1
+x.Text = "Destroy"
 x.MouseButton1Click:Connect(function()
 if gui then
             gui:Destroy()
