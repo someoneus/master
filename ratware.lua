@@ -27,6 +27,8 @@ end) -- Closing function block
 
 local a
 a = 0
+local b
+b = 0
 local plr = game:GetService("Players")
 local locplr = plr.LocalPlayer.Name
 local seltitle
@@ -86,7 +88,7 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Blox Fruit")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -125,7 +127,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/PWNYard/HoHo/refs/hea
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Fisch")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -136,7 +138,7 @@ local Button = Tab:CreateButton({
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Brookhaven RP")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -170,6 +172,7 @@ local Button = Tab:CreateButton({
 			loadstring(game:HttpGet("https://pastebin.com/raw/m0zjJLTv"))()
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Jujutsu Infinite")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -181,7 +184,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games
    end,
 })
 
-
+b = b + 1
 local Section = Tab:CreateSection("Dead Rails")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -200,7 +203,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Muscle Legends")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -223,7 +226,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/QRTUI10/Vamp/refs/hea
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Pet Simulator 99")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -233,7 +236,7 @@ local Button = Tab:CreateButton({
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/pablopoep/PetSimulator99/main/redz9999.lua"))()
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("be dead forever simulator")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -248,6 +251,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/invertedth/kewlzhubbd
 
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Doors")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -258,6 +262,7 @@ local Button = Tab:CreateButton({
 
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Meme Sea")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -267,7 +272,7 @@ local Button = Tab:CreateButton({
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/MemeSea/refs/heads/main/Source.lua"))()
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Blue Lock: RIVALS")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -278,7 +283,7 @@ local Button = Tab:CreateButton({
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Gym League")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -289,7 +294,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Script-Games
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("SCP - 3008")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -299,7 +304,7 @@ local Button = Tab:CreateButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Yumiara/CPP/refs/heads/main/Main.cpp"))()
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Legends of Speed")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -309,7 +314,7 @@ local Button = Tab:CreateButton({
 			loadstring(game:HttpGet("https://rawscripts.net/raw/Legends-Of-Speed-Simple-Legend-Auto-Farm-28647"))()
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("PLS Donate")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -320,6 +325,7 @@ local Button = Tab:CreateButton({
 
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Evade")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -333,6 +339,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/fratelevostru9999/src
 
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Prison Life")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -346,6 +353,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/TheRealNihilize/White
 
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Natural Disaster Survival")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -369,7 +377,7 @@ local Button = Tab:CreateButton({
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("The Strongest Battlegrounds")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -379,6 +387,7 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Phantasm.lua"))()
    end,
 })
+b = b + 1
 local Section = Tab:CreateSection("Jujutsu Shenanigans")
 
 a = a + 1
@@ -391,7 +400,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
-
+b = b + 1
 local Section = Tab:CreateSection("Ninja Legends")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -404,7 +413,7 @@ local Button = Tab:CreateButton({
 })
 
 
-
+b = b + 1
 local Section = Tab:CreateSection("Slop game")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -420,24 +429,18 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/rndmq/Serverlist/refs
 
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Survive The Killer")
 a = a + 1
 local Button = Tab:CreateButton({
-   Name = "Survive the killer",
+   Name = "Size Legends Simulator",
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Milan08Studio/ChairWare/main/main.lua"))()
    end,
 })
-local Section = Tab:CreateSection("Booga Booga")
-local Button = Tab:CreateButton({
-   Name = "Booga Booga - Nebula",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-			loadstring(game:HttpGet('https://raw.githubusercontent.com/Yousuck780/Nebula-Hub/refs/heads/main/boogaboogareborn'))()
-   end,
-})
+
+
 
 
 
@@ -470,7 +473,7 @@ local Button = Tab:CreateButton({
 
 
 local Tab = Window:CreateTab("Key-Scripts", "key-round")
-
+b = b + 1
 local Section = Tab:CreateSection("Murder Mystery 2")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -482,7 +485,7 @@ script_key = "Add key here to auto verify"
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2529a5f9dfddd5523ca4e22f21cceffa.lua"))()
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Pet Simulator 99")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -495,7 +498,7 @@ local Button = Tab:CreateButton({
 -- https://discord.gg/zaphub
    end,
 })
-
+b = b + 1
 local Section = Tab:CreateSection("Build a Boat for Treasure")
 
 a = a + 1
@@ -508,8 +511,7 @@ local Button = Tab:CreateButton({
    end,
 })
 
-local Divider = Tab:CreateDivider()
-local Section = Tab:CreateSection("This tab could or not be discontinued.")
+
 
 local Section = Tab:CreateSection("Other")
 a = a + 1
@@ -523,6 +525,18 @@ local Button = Tab:CreateButton({
 loadstring(game:HttpGet("https://github.com/Synergy-Networks/products/raw/main/BetterBypasser/loader.lua"))()
    end,
 })
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Internal executor - RoExex",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://gist.githubusercontent.com/Axchs/af0848c3885194d54f2c181562675126/raw/96862bc46256bcadde0df0cd799cc7a998bcad82/gistfile1.txt"))()
+
+   end,
+})
+
+local Divider = Tab:CreateDivider()
+local Section = Tab:CreateSection("This tab could or not be discontinued.")
 
 
 local Tab = Window:CreateTab("Hub's", "shell")
@@ -672,15 +686,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/AnnaRoblox/AnnaBypass
 })
 
 
-a = a + 1
-local Button = Tab:CreateButton({
-   Name = "Internal executor - RoExec (has key)",
-   Callback = function()
-   -- The function that takes place when the button is pressed
-   loadstring(game:HttpGet("https://gist.githubusercontent.com/Axchs/af0848c3885194d54f2c181562675126/raw/96862bc46256bcadde0df0cd799cc7a998bcad82/gistfile1.txt"))()
 
-   end,
-})
 
 local Button = Tab:CreateButton({
    Name = "Server Finder",
@@ -898,6 +904,14 @@ if a then
     Duration = 10,
     Image = "scroll",
 })
+    wait(10)
+    print(b.." games are supported by rAt-WarE")
+    Rayfield:Notify({
+    Title = "Script Master",
+    Content = "rAt-WarE Currently has "..b.." games supported for free!",
+    Duration = 10,
+    Image = "scroll",
+})
 
 end
 end)
@@ -1062,10 +1076,16 @@ elseif string.find("dead" or "rails", txt) then
                                                                            Text = "Evade",
                                                                            Duration = 3, -- Time in seconds
                                                                         })
+                                                                        elseif string.find("fisch", txt) then
+                                                                           game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                              Title = "Supported!",
+                                                                              Text = "Fisch",
+                                                                              Duration = 3, -- Time in seconds
+                                                                           })
                                                                      else
                                                                         game:GetService("StarterGui"):SetCore("SendNotification", {
                                                                            Title = "Unsupported!",
-                                                                           Text = ":(",
+                                                                           Text = "your input "..txt.." is 404: Not found.",
                                                                            Duration = 3, -- Time in seconds
                                                                         })
                                                                      end
