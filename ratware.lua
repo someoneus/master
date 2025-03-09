@@ -370,6 +370,41 @@ local Button = Tab:CreateButton({
    end,
 })
 
+local Section = Tab:CreateSection("The Strongest Battlegrounds")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "The Strongest Batllegrounds",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/ATrainz/Phantasm/refs/heads/main/Phantasm.lua"))()
+   end,
+})
+local Section = Tab:CreateSection("Jujutsu Shenanigans")
+
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Jujutsu Shenanigans",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/BaconBossScript/BeeconHub/main/BeeconHub"))()
+
+   end,
+})
+
+
+local Section = Tab:CreateSection("Ninja Legends")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Ninja legends - proxima",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/TrixAde/Proxima-Hub/main/Main.lua"))()
+
+   end,
+})
+
+
+
 local Section = Tab:CreateSection("Slop game")
 a = a + 1
 local Button = Tab:CreateButton({
@@ -386,29 +421,23 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/rndmq/Serverlist/refs
    end,
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+local Section = Tab:CreateSection("Survive The Killer")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Survive the killer",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Milan08Studio/ChairWare/main/main.lua"))()
+   end,
+})
+local Section = Tab:CreateSection("Booga Booga")
+local Button = Tab:CreateButton({
+   Name = "Booga Booga - Nebula",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+			loadstring(game:HttpGet('https://raw.githubusercontent.com/Yousuck780/Nebula-Hub/refs/heads/main/boogaboogareborn'))()
+   end,
+})
 
 
 
@@ -478,6 +507,9 @@ local Button = Tab:CreateButton({
 
    end,
 })
+
+local Divider = Tab:CreateDivider()
+local Section = Tab:CreateSection("This tab could or not be discontinued.")
 
 local Section = Tab:CreateSection("Other")
 a = a + 1
@@ -671,6 +703,15 @@ local Button = Tab:CreateButton({
 local Section = Tab:CreateSection("Section 3")
 a = a + 1
 local Button = Tab:CreateButton({
+   Name = "frymygame.lua (loud and irreversible warning)",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/someoneus/master/refs/heads/main/frymygame.lua'))()
+
+   end,
+})
+a = a + 1
+local Button = Tab:CreateButton({
    Name = "Internal executor - UI (pc only)",
    Callback = function()
    -- The function that takes place when the button is pressed
@@ -793,7 +834,7 @@ local Toggle = Tab:CreateToggle({
     if Value then
         local RunService = game:GetService("RunService")
         RunService.RenderStepped:Connect(function(deltaTime)
-        task.Wait(deltaTime * 1.1)
+        task.wait(deltaTime * 1.1)
         game.Lighting.Brightness = 1
         game.Ambient = Color3.fromRGB(255, 255, 255)
         game.Lighting.GlobalShadows = false
@@ -823,7 +864,7 @@ local Toggle = Tab:CreateToggle({
     if Value then
     local run = game:GetService("RunService")
     run.RenderStepped:Connect(function(deltaTime)
-        task.Wait(deltaTime * 1.1)
+        task.wait(deltaTime * 1.1)
         game.Lighting.FogEnd = math.huge or 1e6 or 10000
         game.Lighting.FogStart = math.huge or 1e6 or 10000
     end)
@@ -860,3 +901,185 @@ if a then
 
 end
 end)
+
+local Input = Tab:CreateInput({
+   Name = "Check Supported",
+   CurrentValue = "",
+   PlaceholderText = "Search a game name and we will check if its supported",
+   RemoveTextAfterFocusLost = true,
+   Flag = "check1",
+   Callback = function(Text)
+   -- The function that takes place when the input is changed
+   -- The variable (Text) is a string for the value in the text box
+   local txt = string.lower(Text)
+   if string.find("blue" or "lock" or "rivals", txt) then
+   game:GetService("StarterGui"):SetCore("SendNotification", {
+      Title = "Supported!",
+      Text = "Blue Lock: RIVALS",
+      Duration = 3, -- Time in seconds
+   })
+elseif string.find("dead" or "rails", txt) then
+   game:GetService("StarterGui"):SetCore("SendNotification", {
+      Title = "Supported!",
+      Text = "Dead Rails",
+      Duration = 3, -- Time in seconds
+   })
+   elseif string.find("blox" or "fruits" or "fruit", txt) then
+      game:GetService("StarterGui"):SetCore("SendNotification", {
+         Title = "Supported!",
+         Text = "Blox Fruit",
+         Duration = 3, -- Time in seconds
+      })
+      elseif string.find("brookhaven" or "rp", txt) then
+         game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Supported!",
+            Text = "Brookhaven RP",
+            Duration = 3, -- Time in seconds
+         })
+         elseif string.find("bdfs" or "be" or "dead" or "forever" or "simulator", txt) then
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+               Title = "Supported!",
+               Text = "be dead forever simulator",
+               Duration = 3, -- Time in seconds
+            })
+            elseif string.find("size" or "legend", txt) then
+               game:GetService("StarterGui"):SetCore("SendNotification", {
+                  Title = "Supported!",
+                  Text = "Size Legend Simulator",
+                  Duration = 3, -- Time in seconds
+               })
+               elseif string.find("muscle" or "legends", txt) then
+                  game:GetService("StarterGui"):SetCore("SendNotification", {
+                     Title = "Supported!",
+                     Text = "Muscle Legends",
+                     Duration = 3, -- Time in seconds
+                  })
+                  elseif string.find("survive" or "killer", txt) then
+                     game:GetService("StarterGui"):SetCore("SendNotification", {
+                        Title = "Supported!",
+                        Text = "Survive The Killer",
+                        Duration = 3,
+                     })
+                     elseif string.find("booga", txt) then
+                        game:GetService("StarterGui"):SetCore("SendNotification", {
+                           Title = "Supported!",
+                           Text = "Booga Booga",
+                           Duration = 3, -- Time in seconds
+                        })
+                        elseif string.find("murder" or "mystery", txt) then
+                           game:GetService("StarterGui"):SetCore("SendNotification", {
+                              Title = "Supported!",
+                              Text = "Murder Mystery 2",
+                              Duration = 3, -- Time in seconds
+                           })
+                           elseif string.find("natural" or "disaster", txt) then
+                              game:GetService("StarterGui"):SetCore("SendNotification", {
+                                 Title = "Supported!",
+                                 Text = "Natural Disaster",
+                                 Duration = 3, -- Time in seconds
+                              })
+                              elseif string.find("legend" or "speed", txt) then
+                                 game:GetService("StarterGui"):SetCore("SendNotification", {
+                                    Title = "Supported!",
+                                    Text = "Legends of speed",
+                                    Duration = 3, -- Time in seconds
+                                 })
+                                 elseif string.find("pet" or "99", txt) then
+                                    game:GetService("StarterGui"):SetCore("SendNotification", {
+                                       Title = "Supported!",
+                                       Text = "Pet Simulator 99",
+                                       Duration = 3, -- Time in seconds
+                                    })
+                                    elseif string.find("prison" or "life", txt) then
+                                       game:GetService("StarterGui"):SetCore("SendNotification", {
+                                          Title = "Supported!",
+                                          Text = "Prison Life",
+                                          Duration = 3, -- Time in seconds
+                                       })
+                                       elseif string.find("build" or "boat" or "boats" or "treasure", txt) then
+                                          game:GetService("StarterGui"):SetCore("SendNotification", {
+                                             Title = "Supported!",
+                                             Text = "Build a boat for Treasure",
+                                             Duration = 3, -- Time in seconds
+                                          })
+                                          elseif string.find("ninja", txt) then
+                                             game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                Title = "Supported!",
+                                                Text = "Ninja Legends",
+                                                Duration = 3, -- Time in seconds
+                                             })
+                                             elseif string.find("jujutsue" or "infinite", txt) then
+                                                game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                   Title = "Supported!",
+                                                   Text = "Jujutsu Infinite",
+                                                   Duration = 3, -- Time in seconds
+                                                })
+                                                elseif string.find("gym" or "league", txt) then
+                                                   game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                      Title = "Supported!",
+                                                      Text = "GYM League",
+                                                      Duration = 3, -- Time in seconds
+                                                   })
+                                                   elseif string.find("battleground" or "battlegrounds" or "strongest", txt) then
+                                                      game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                         Title = "Supported!",
+                                                         Text = "The Strongest Batllegrounds",
+                                                         Duration = 3, -- Time in seconds
+                                                      })
+                                                      elseif string.find("jujutsue" or "shenanigans", txt) then
+                                                         game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                            Title = "Supported!",
+                                                            Text = "Jujutsu Shenanigans",
+                                                            Duration = 3, -- Time in seconds
+                                                         })
+                                                         elseif string.find("doors" or "door", txt) then
+                                                            game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                               Title = "Supported!",
+                                                               Text = "Doors",
+                                                               Duration = 3, -- Time in seconds
+                                                            })
+                                                            elseif string.find("scp" or "3008", txt) then
+                                                               game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                  Title = "Supported!",
+                                                                  Text = "3008",
+                                                                  Duration = 3, -- Time in seconds
+                                                               })
+                                                               elseif string.find("pls" or "donate", txt) then
+                                                                  game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                     Title = "Supported!",
+                                                                     Text = "PLS Donate",
+                                                                     Duration = 3, -- Time in seconds
+                                                                  })
+                                                                  elseif string.find("meme" or "sea", txt) then
+                                                                     game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                        Title = "Supported!",
+                                                                        Text = "Meme Sea",
+                                                                        Duration = 3, -- Time in seconds
+                                                                     })
+                                                                     elseif string.find("evade", txt) then
+                                                                        game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                           Title = "Supported!",
+                                                                           Text = "Evade",
+                                                                           Duration = 3, -- Time in seconds
+                                                                        })
+                                                                     else
+                                                                        game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                           Title = "Unsupported!",
+                                                                           Text = ":(",
+                                                                           Duration = 3, -- Time in seconds
+                                                                        })
+                                                                     end
+                                                                     
+                                                         
+                                                      
+                                                   
+                                          
+                                       
+                                    
+                                 
+                           
+                        
+                     
+   
+   end,
+})
