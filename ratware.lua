@@ -31,20 +31,48 @@ local b
 b = 0
 local plr = game:GetService("Players")
 local locplr = plr.LocalPlayer.Name
-local seltitle
-seltitle = "rAt-WarE"
 
-if locplr == "oeind36" then
-	seltitle = "aRdl b0t"
+
+
+local executorName = "Unknown"
+
+if identifyexecutor then
+    executorName = identifyexecutor()
+elseif syn then
+    executorName = "Synapse X"
+elseif KRNL_LOADED then
+    executorName = "KRNL"
+elseif fluxus then
+    executorName = "Fluxus"
+elseif secure_load then
+    executorName = "Script-Ware"
+elseif isexecutorclosure then
+    executorName = "Hydrogen"
+elseif getexecutorname then
+    executorName = getexecutorname()
+elseif Arceus then
+    executorName = "Arceus X"
+elseif is_sirhurt_closure then
+    executorName = "SirHurt"
+elseif hookfunction and not is_sirhurt_closure then
+    executorName = "Probably Evon / Codex / Delta / Wave / Xeno"
+elseif pebc_execute then
+    executorName = "Delta"
+elseif evon then
+    executorName = "Evon"
+elseif codex then
+    executorName = "Codex"
+elseif XENO_LOADED then
+    executorName = "Xeno"
+elseif wave then
+    executorName = "Wave"
 end
 
-if locplr == "devilshmd" then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/someoneus/master/refs/heads/main/keyboardmouse.lua"))()
-end
+
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-   Name = seltitle,
+   Name = "rAt-WarE - "..executorName,
    Icon = "rat", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "rAt-WarE",
    LoadingSubtitle = "by someoneus",
@@ -170,6 +198,14 @@ local Button = Tab:CreateButton({
    Callback = function()
    -- The function that takes place when the button is pressed
 			loadstring(game:HttpGet("https://pastebin.com/raw/m0zjJLTv"))()
+   end,
+})
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Brookhaven - Salvatore",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/RFR-R1CH4RD/Loader/main/Salvatore.lua"))()
    end,
 })
 b = b + 1
@@ -433,10 +469,40 @@ b = b + 1
 local Section = Tab:CreateSection("Survive The Killer")
 a = a + 1
 local Button = Tab:CreateButton({
-   Name = "Size Legends Simulator",
+   Name = "Survive the killer - chairware",
    Callback = function()
    -- The function that takes place when the button is pressed
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Milan08Studio/ChairWare/main/main.lua"))()
+   end,
+})
+b = b + 1
+local Section = Tab:CreateSection("Bee swarm simulator")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "BSS",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/Chris8889/atlasbss/main/script.lua"))()
+   end,
+})
+b = b + 1
+local Section = Tab:CreateSection("Jailbreak")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Jailbreak",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet('http://scripts.projectauto.xyz/AutoRobV5'))()
+   end,
+})
+b = b + 1
+local Section = Tab:CreateSection("Blade ball")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Blade ball - STAR X",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   loadstring(game:HttpGet("https://raw.githubusercontent.com/CodeE4X-dev/StarX/refs/heads/main/Blade-Ball.lua", true))()
    end,
 })
 
@@ -908,7 +974,7 @@ if a then
     print(b.." games are supported by rAt-WarE")
     Rayfield:Notify({
     Title = "Script Master",
-    Content = "rAt-WarE Currently has "..b.." games supported for free!",
+    Content = "and "..b.." games are supported!",
     Duration = 10,
     Image = "scroll",
 })
@@ -917,9 +983,9 @@ end
 end)
 
 local Input = Tab:CreateInput({
-   Name = "Check Supported",
+   Name = "",
    CurrentValue = "",
-   PlaceholderText = "Search a game name and we will check if its supported",
+   PlaceholderText = "Search a game name and we will check if its supported in our hub!",
    RemoveTextAfterFocusLost = true,
    Flag = "check1",
    Callback = function(Text)
@@ -1022,7 +1088,7 @@ elseif string.find("dead" or "rails", txt) then
                                                 Text = "Ninja Legends",
                                                 Duration = 3, -- Time in seconds
                                              })
-                                             elseif string.find("jujutsue" or "infinite", txt) then
+                                             elseif string.find("jujutsu" or "infinite", txt) then
                                                 game:GetService("StarterGui"):SetCore("SendNotification", {
                                                    Title = "Supported!",
                                                    Text = "Jujutsu Infinite",
@@ -1037,10 +1103,10 @@ elseif string.find("dead" or "rails", txt) then
                                                    elseif string.find("battleground" or "battlegrounds" or "strongest", txt) then
                                                       game:GetService("StarterGui"):SetCore("SendNotification", {
                                                          Title = "Supported!",
-                                                         Text = "The Strongest Batllegrounds",
+                                                         Text = "The Strongest Battlegrounds",
                                                          Duration = 3, -- Time in seconds
                                                       })
-                                                      elseif string.find("jujutsue" or "shenanigans", txt) then
+                                                      elseif string.find("jujutsu" or "shenanigans", txt) then
                                                          game:GetService("StarterGui"):SetCore("SendNotification", {
                                                             Title = "Supported!",
                                                             Text = "Jujutsu Shenanigans",
@@ -1082,10 +1148,28 @@ elseif string.find("dead" or "rails", txt) then
                                                                               Text = "Fisch",
                                                                               Duration = 3, -- Time in seconds
                                                                            })
+                                                                           elseif string.find("bee" or "swarm", txt) then
+                                                                              game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                                 Title = "Supported!",
+                                                                                 Text = "Bee Swarm Simulator",
+                                                                                 Duration = 3, -- Time in seconds
+                                                                              })
+				                                                                           elseif string.find("jailbreak", txt) then
+                                                                              game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                                 Title = "Supported!",
+                                                                                 Text = "Jailbreak",
+                                                                                 Duration = 3, -- Time in seconds
+                                                                              })
+				                                                                           elseif string.find("blade" or "ball", txt) then
+                                                                              game:GetService("StarterGui"):SetCore("SendNotification", {
+                                                                                 Title = "Supported!",
+                                                                                 Text = "Blade Ball",
+                                                                                 Duration = 3, -- Time in seconds
+                                                                              })
                                                                      else
                                                                         game:GetService("StarterGui"):SetCore("SendNotification", {
                                                                            Title = "Unsupported!",
-                                                                           Text = "your input "..txt.." is 404: Not found.",
+                                                                           Text = "your input ["..txt.."] :(",
                                                                            Duration = 3, -- Time in seconds
                                                                         })
                                                                      end
