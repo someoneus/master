@@ -505,7 +505,38 @@ local Button = Tab:CreateButton({
    loadstring(game:HttpGet("https://raw.githubusercontent.com/CodeE4X-dev/StarX/refs/heads/main/Blade-Ball.lua", true))()
    end,
 })
+b = b + 1
+local Section = Tab:CreateSection("Lumber Tycoon 2")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Lumber Tycoon 2 - Butter V3",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Butterisgood/Butter/main/Butter%20V3%20Testers.txt'))("")
+   end,
+})
+b = b + 1
+local Section = Tab:CreateSection("Shrimp Game")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Shrimp Game",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+_G.Theme = "Dark"
+--Themes: Light, Dark, Red, Mocha, Aqua and Jester
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/ShrimpGame.lua"))()
+   end,
+})
+b = b + 1
+local Section = Tab:CreateSection("Volleyball Legend")
+a = a + 1
+local Button = Tab:CreateButton({
+   Name = "Volleyball Legend - Sterling",
+   Callback = function()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/OhhMyGehlee/vol/refs/heads/main/ball"))()
+   end,
+})
 
 
 
@@ -1166,6 +1197,24 @@ elseif string.find("dead" or "rails", txt) then
                                                                                  Text = "Blade Ball",
                                                                                  Duration = 3, -- Time in seconds
                                                                               })
+elseif string.find("lumber", txt) then
+   game:GetService("StarterGui"):SetCore("SendNotification", {
+      Title = "Supported!",
+      Text = "Lumber Tycoon 2",
+      Duration = 3, -- Time in seconds
+   })
+   elseif string.find("shrimp", txt) then
+   game:GetService("StarterGui"):SetCore("SendNotification", {
+      Title = "Supported!",
+      Text = "Shrimp Game",
+      Duration = 3, -- Time in seconds
+   })
+   elseif string.find("volley" or "volleyball", txt) then
+   game:GetService("StarterGui"):SetCore("SendNotification", {
+      Title = "Supported!",
+      Text = "Volleyball Legend",
+      Duration = 3, -- Time in seconds
+   })
                                                                      else
                                                                         game:GetService("StarterGui"):SetCore("SendNotification", {
                                                                            Title = "Unsupported!",
