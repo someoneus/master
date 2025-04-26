@@ -39,7 +39,6 @@ local Window = Rayfield:CreateWindow({
     }
  })
  local Tab = Window:CreateTab("dev", "file-code")
- local Section = Tab:CreateSection("do not use on highly strict security game!")
 
  local Divider = Tab:CreateDivider()
 
