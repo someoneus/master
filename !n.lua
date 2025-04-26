@@ -590,6 +590,42 @@ local toggleKeepPosition = Tab:CreateToggle({
         end
     end,
 })
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local respawnConnections = {}
+local characterAddedConn
+
+local QuickRespawnToggle = Tab:CreateToggle({
+    Name = "Quick Respawn",
+    CurrentValue = false,
+    Flag = "QuickRespawn",
+    Callback = function(enabled)
+        for _, c in ipairs(respawnConnections) do c:Disconnect() end
+        respawnConnections = {}
+        if characterAddedConn then
+            characterAddedConn:Disconnect()
+            characterAddedConn = nil
+        end
+        if enabled then
+            if player.Character then
+                local hum = player.Character:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    table.insert(respawnConnections, hum.Died:Connect(function()
+                        player:LoadCharacter()
+                    end))
+                end
+            end
+            characterAddedConn = player.CharacterAdded:Connect(function(char)
+                local hum = char:FindFirstChildOfClass("Humanoid")
+                if hum then
+                    table.insert(respawnConnections, hum.Died:Connect(function()
+                        player:LoadCharacter()
+                    end))
+                end
+            end)
+        end
+    end,
+})
 
 
 local Divider = Tab:CreateDivider()
