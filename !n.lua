@@ -7,7 +7,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
     Name = "!n",
-    Icon = "circle-alert", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
+    Icon = "chrome", -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
     LoadingTitle = "!n Interface",
     LoadingSubtitle = "v1.1",
     Theme = "Amethyst", -- Check https://docs.sirius.menu/rayfield/configuration/themes
@@ -397,10 +397,25 @@ local btnSetSurfaceGuiDistance = Tab:CreateButton({
     end,
 })
 
+local Players = game:GetService("Players")
+local localPlayer = Players.LocalPlayer
+
+local safeParents = {workspace, localPlayer:WaitForChild("PlayerGui")}
+
+local function safeDescendants()
+    local all = {}
+    for _, parent in ipairs(safeParents) do
+        for _, child in ipairs(parent:GetDescendants()) do
+            table.insert(all, child)
+        end
+    end
+    return all
+end
+
 local btnRemoveUICorner = Tab:CreateButton({
     Name = "Remove UICorner",
     Callback = function()
-        for _, ui in ipairs(game:GetDescendants()) do
+        for _, ui in ipairs(safeDescendants()) do
             if ui:IsA("UICorner") then
                 ui:Destroy()
             end
@@ -411,7 +426,7 @@ local btnRemoveUICorner = Tab:CreateButton({
 local btnRemoveUIStroke = Tab:CreateButton({
     Name = "Remove UIStroke",
     Callback = function()
-        for _, ui in ipairs(game:GetDescendants()) do
+        for _, ui in ipairs(safeDescendants()) do
             if ui:IsA("UIStroke") then
                 ui:Destroy()
             end
@@ -422,7 +437,7 @@ local btnRemoveUIStroke = Tab:CreateButton({
 local btnRemoveUIGradient = Tab:CreateButton({
     Name = "Remove UIGradient",
     Callback = function()
-        for _, ui in ipairs(game:GetDescendants()) do
+        for _, ui in ipairs(safeDescendants()) do
             if ui:IsA("UIGradient") then
                 ui:Destroy()
             end
@@ -585,7 +600,7 @@ Input = Tab:CreateInput({
     Name = "quick calculator",
     CurrentValue = "",
     PlaceholderText = "Enter math expression",
-    RemoveTextAfterFocusLost = false,
+    RemoveTextAfterFocusLost = true,
     Flag = "MathInput",
     Callback = function(Text)
         -- sanitize: allow only digits, operators, dots and parentheses
