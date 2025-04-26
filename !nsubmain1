@@ -543,23 +543,30 @@ local sliderWalkSpeed = Tab:CreateSlider({
         end
     end,
 })
+local Players = game:GetService("Players")
+local player  = Players.LocalPlayer
 local Button = Tab:CreateButton({
-   Name = "Reset Sliders",
-   Callback = function()
-        local humanoid = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Humanoid")
-        if humanoid then
-        humanoid.WalkSpeed = 16
+    Name = "Reset Sliders",
+    Callback = function()
+        -- get character (or wait if it hasn’t spawned yet)
+        local character = player.Character or player.CharacterAdded:Wait()
+        -- get the Humanoid safely
+        local humanoid  = character:WaitForChild("Humanoid", 5)
+        if not humanoid then
+            warn("No Humanoid found on character!")
+            return
+        end
+
+        -- reset the humanoid properties
+        humanoid.WalkSpeed  = 16
         humanoid.JumpHeight = 7.2
-        if humanoid.RigType == Enum.HumanoidRigType.R15 then
-            humanoid.HipHeight = 1.35
-        else
-            humanoid.HipHeight = 0 
-        end
-            sliderWalkSpeed:Set(16)
-            sliderJumpHeight:Set(7.2)
-            sliderHipHeight:Set(humanoid.HipHeight)
-        end
-   end,
+        humanoid.HipHeight  = (humanoid.RigType == Enum.HumanoidRigType.R15) and 1.35 or 0
+
+        -- sync the sliders
+        sliderWalkSpeed:Set(16)
+        sliderJumpHeight:Set(7.2)
+        sliderHipHeight:Set(humanoid.HipHeight)
+    end,
 })
 
 local Players = game:GetService("Players")
@@ -620,6 +627,8 @@ local toggleKeepPosition = Tab:CreateToggle({
 })
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
+
+-- keep track of all death connections and the CharacterAdded connection
 local respawnConnections = {}
 local characterAddedConn
 
@@ -628,25 +637,36 @@ local QuickRespawnToggle = Tab:CreateToggle({
     CurrentValue = false,
     Flag = "QuickRespawn",
     Callback = function(enabled)
-        for _, c in ipairs(respawnConnections) do c:Disconnect() end
+        -- CLEANUP: disconnect any old listeners
+        for _, conn in ipairs(respawnConnections) do
+            conn:Disconnect()
+        end
         respawnConnections = {}
+
         if characterAddedConn then
             characterAddedConn:Disconnect()
             characterAddedConn = nil
         end
+
         if enabled then
+            -- BIND to the current character (if it exists)
             if player.Character then
-                local hum = player.Character:FindFirstChildOfClass("Humanoid")
-                if hum then
-                    table.insert(respawnConnections, hum.Died:Connect(function()
+                local char = player.Character
+                local humanoid = char:FindFirstChildOfClass("Humanoid") 
+                                or char:WaitForChild("Humanoid", 5)
+                if humanoid then
+                    table.insert(respawnConnections, humanoid.Died:Connect(function()
                         player:LoadCharacter()
                     end))
                 end
             end
+
+            -- BIND to every future character spawn
             characterAddedConn = player.CharacterAdded:Connect(function(char)
-                local hum = char:FindFirstChildOfClass("Humanoid")
-                if hum then
-                    table.insert(respawnConnections, hum.Died:Connect(function()
+                local humanoid = char:FindFirstChildOfClass("Humanoid") 
+                                or char:WaitForChild("Humanoid", 5)
+                if humanoid then
+                    table.insert(respawnConnections, humanoid.Died:Connect(function()
                         player:LoadCharacter()
                     end))
                 end
@@ -656,44 +676,43 @@ local QuickRespawnToggle = Tab:CreateToggle({
 })
 
 
+
 local Divider = Tab:CreateDivider()
 
 local Section = Tab:CreateSection("misc")
+-- Create a single section to display the result
 local resultSection = Tab:CreateSection("math.result: nil")
-local QuickCalcToggle = Tab:CreateToggle({
-    Name = "Quick Calculator",
-    CurrentValue = false,
-    Flag = "QuickCalc",
-    Callback = function(enabled)
-        if enabled then
-            local resultSection = Tab:CreateSection("math.result: nil")
-            Tab:CreateInput({
-                Name                     = "quick calculator",
-                CurrentValue             = "",
-                PlaceholderText          = "Enter math expression",
-                RemoveTextAfterFocusLost = true,
-                Flag                     = "MathInput",
-                Callback = function(Text)
-                    local function formatNumberWithCommas(number)
-                        local s = tostring(number)
-                        local left, num, right = s:match("^([^%d]*%d)(%d*)(.-)$")
-                        num = num:reverse():gsub("(%d%d%d)", "%1,"):reverse()
-                        return left .. num .. right
-                    end
-                    local expr = Text:gsub("[^%d%+%-%*%/%^%.%(%) ]", "")
-                    local fn = loadstring("return " .. expr)
-                    if fn then
-                        local ok, result = pcall(fn)
-                        if ok and result ~= nil then
-                            resultSection:Set("math.result: " .. formatNumberWithCommas(result))
-                        else
-                            resultSection:Set("math.result: Error")
-                        end
-                    else
-                        resultSection:Set("math.result: Error")
-                    end
-                end,
-            })
+
+-- Create the input box right away
+Tab:CreateInput({
+    Name                     = "Quick Calculator",
+    CurrentValue             = "",
+    PlaceholderText          = "Enter math expression",
+    RemoveTextAfterFocusLost = true,
+    Flag                     = "MathInput",
+    Callback = function(Text)
+        -- formats numbers with commas (e.g. 1,234,567)
+        local function formatNumberWithCommas(number)
+            local s = tostring(number)
+            local left, num, right = s:match("^([^%d]*%d)(%d*)(.-)$")
+            num = num:reverse():gsub("(%d%d%d)", "%1,"):reverse()
+            return left .. num .. right
+        end
+
+        -- sanitize input: only digits, operators, parentheses, dot, and space
+        local expr = Text:gsub("[^%d%+%-%*%/%^%.%(%) ]", "")
+
+        -- try to evaluate
+        local fn = loadstring("return " .. expr)
+        if fn then
+            local ok, result = pcall(fn)
+            if ok and result ~= nil then
+                resultSection:Set("math.result: " .. formatNumberWithCommas(result))
+            else
+                resultSection:Set("math.result: Error")
+            end
+        else
+            resultSection:Set("math.result: Error")
         end
     end,
 })
