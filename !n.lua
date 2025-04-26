@@ -595,6 +595,8 @@ local toggleKeepPosition = Tab:CreateToggle({
 local Divider = Tab:CreateDivider()
 
 local Section = Tab:CreateSection("misc")
+
+local mthres = Tab:CreateSection("math.result: nil")
 local Input
 Input = Tab:CreateInput({
     Name = "quick calculator",
@@ -610,12 +612,13 @@ Input = Tab:CreateInput({
         if fn then
             local ok, result = pcall(fn)
             if ok and result ~= nil then
-                Input:Set(tostring(result))
+                mthres:Set("math.result: "..tostring(result))
+                result = nil
             else
-                Input:Set("Error")
+                mthres:Set("math.result: Error")
             end
         else
-            Input:Set("Error")
+            mthres:Set("math.result: Error")
         end
     end,
 })
