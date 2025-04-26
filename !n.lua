@@ -154,6 +154,15 @@ local btnDisableGlobalShadows = Tab:CreateButton({
     end,
 })
 
+local Button = Tab:CreateButton({
+    Name = "Disable Terrain Decorations",
+    Callback = function()
+        pcall(function()
+            workspace.Terrain.Decoration = false
+        end)
+    end,
+})
+
 local btnSetFogEnd = Tab:CreateButton({
     Name = "Set FogEnd to 100000",
     Callback = function()
@@ -505,17 +514,18 @@ local sliderHipHeight = Tab:CreateSlider({
     end,
 })
 
-local sliderJumpPower = Tab:CreateSlider({
-    Name = "JumpPower",
-    Range = {0, 2048},
+local sliderJumpPHeight = Tab:CreateSlider({
+    Name = "JumpHeight",
+    Range = {0, 256},
     Increment = 1,
     Suffix = "Power",
-    CurrentValue = 50,
-    Flag = "JumpPowerSlider",
+    CurrentValue = 7.2,
+    Flag = "JumpHeightSlider",
     Callback = function(value)
         local humanoid = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Humanoid")
         if humanoid then
-            humanoid.JumpPower = value
+            humanoid.UseJumpPower = false
+            humanoid.JumpHeight = value
         end
     end,
 })
@@ -534,6 +544,25 @@ local sliderWalkSpeed = Tab:CreateSlider({
         end
     end,
 })
+local Button = Tab:CreateButton({
+   Name = "Reset Sliders",
+   Callback = function()
+        local humanoid = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Humanoid")
+        if humanoid then
+        humanoid.WalkSpeed = 16
+        humanoid.JumpHeight = 7.2
+        if humanoid.RigType == Enum.HumanoidRigType.R15 then
+            humanoid.HipHeight = 1.35
+        else
+            humanoid.HipHeight = 0 
+        end
+            sliderWalkSpeed:Set(16)
+            sliderJumpHeight:Set(7.2)
+            sliderHipHeight:Set(humanoid.HipHeight)
+        end
+   end,
+})
+
 local Players = game:GetService("Players")
 local localPlayer = Players.LocalPlayer
 
@@ -631,30 +660,42 @@ local QuickRespawnToggle = Tab:CreateToggle({
 local Divider = Tab:CreateDivider()
 
 local Section = Tab:CreateSection("misc")
-
-local mthres = Tab:CreateSection("math.result: nil")
-local Input
-Input = Tab:CreateInput({
-    Name = "quick calculator",
-    CurrentValue = "",
-    PlaceholderText = "Enter math expression",
-    RemoveTextAfterFocusLost = true,
-    Flag = "MathInput",
-    Callback = function(Text)
-        -- sanitize: allow only digits, operators, dots and parentheses
-        local expr = Text:gsub("[^%d%+%-%*%/%^%.%(%) ]", "")
-        -- try to compile
-        local fn, err = loadstring("return " .. expr)
-        if fn then
-            local ok, result = pcall(fn)
-            if ok and result ~= nil then
-                mthres:Set("math.result: "..tostring(result))
-                result = nil
-            else
-                mthres:Set("math.result: Error")
-            end
-        else
-            mthres:Set("math.result: Error")
+local resultSection = Tab:CreateSection("math.result: nil")
+local QuickCalcToggle = Tab:CreateToggle({
+    Name = "Quick Calculator",
+    CurrentValue = false,
+    Flag = "QuickCalc",
+    Callback = function(enabled)
+        if enabled then
+            local resultSection = Tab:CreateSection("math.result: nil")
+            Tab:CreateInput({
+                Name                     = "quick calculator",
+                CurrentValue             = "",
+                PlaceholderText          = "Enter math expression",
+                RemoveTextAfterFocusLost = true,
+                Flag                     = "MathInput",
+                Callback = function(Text)
+                    local function formatNumberWithCommas(number)
+                        local s = tostring(number)
+                        local left, num, right = s:match("^([^%d]*%d)(%d*)(.-)$")
+                        num = num:reverse():gsub("(%d%d%d)", "%1,"):reverse()
+                        return left .. num .. right
+                    end
+                    local expr = Text:gsub("[^%d%+%-%*%/%^%.%(%) ]", "")
+                    local fn = loadstring("return " .. expr)
+                    if fn then
+                        local ok, result = pcall(fn)
+                        if ok and result ~= nil then
+                            resultSection:Set("math.result: " .. formatNumberWithCommas(result))
+                        else
+                            resultSection:Set("math.result: Error")
+                        end
+                    else
+                        resultSection:Set("math.result: Error")
+                    end
+                end,
+            })
         end
     end,
 })
+
