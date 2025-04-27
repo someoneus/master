@@ -674,13 +674,6 @@ local Button = Tab:CreateButton({
     end,
  })
  local Button = Tab:CreateButton({
-    Name = "grow a garden_2",
-    Callback = function()
-    -- The function that takes place when the button is pressed
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Bebo-Mods/BeboScripts/refs/heads/main/GrowAGarden.lua"))()
-    end,
- })
- local Button = Tab:CreateButton({
     Name = "dead rails",
     Callback = function()
         loadstring(game:HttpGet('https://skullhub.xyz/loader.lua'))()
