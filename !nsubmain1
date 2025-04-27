@@ -622,55 +622,7 @@ local toggleKeepPosition = Tab:CreateToggle({
         end
     end,
 })
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
 
--- keep track of all death connections and the CharacterAdded connection
-local respawnConnections = {}
-local characterAddedConn
-
-local QuickRespawnToggle = Tab:CreateToggle({
-    Name = "Quick Respawn",
-    CurrentValue = false,
-    Flag = "QuickRespawn",
-    Callback = function(enabled)
-        -- CLEANUP: disconnect any old listeners
-        for _, conn in ipairs(respawnConnections) do
-            conn:Disconnect()
-        end
-        respawnConnections = {}
-
-        if characterAddedConn then
-            characterAddedConn:Disconnect()
-            characterAddedConn = nil
-        end
-
-        if enabled then
-            -- BIND to the current character (if it exists)
-            if player.Character then
-                local char = player.Character
-                local humanoid = char:FindFirstChildOfClass("Humanoid") 
-                                or char:WaitForChild("Humanoid", 5)
-                if humanoid then
-                    table.insert(respawnConnections, humanoid.Died:Connect(function()
-                        player:LoadCharacter()
-                    end))
-                end
-            end
-
-            -- BIND to every future character spawn
-            characterAddedConn = player.CharacterAdded:Connect(function(char)
-                local humanoid = char:FindFirstChildOfClass("Humanoid") 
-                                or char:WaitForChild("Humanoid", 5)
-                if humanoid then
-                    table.insert(respawnConnections, humanoid.Died:Connect(function()
-                        player:LoadCharacter()
-                    end))
-                end
-            end)
-        end
-    end,
-})
 
 
 
