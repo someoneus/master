@@ -665,3 +665,4 @@ Tab:CreateInput({
         end
     end,
 })
+return Window, Rayfield
