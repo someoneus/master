@@ -562,10 +562,7 @@ local Button = Tab:CreateButton({
         humanoid.JumpHeight = 7.2
         humanoid.HipHeight  = (humanoid.RigType == Enum.HumanoidRigType.R15) and 1.35 or 0
 
-        -- sync the sliders
-        sliderWalkSpeed:Set(16)
-        sliderJumpHeight:Set(7.2)
-        sliderHipHeight:Set(humanoid.HipHeight)
+
     end,
 })
 
